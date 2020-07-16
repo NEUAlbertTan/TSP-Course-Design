@@ -1,9 +1,8 @@
 #include <iostream>
 #include <windows.h>
-#include <fstream>
 #include <string>
-#include "readFile/readFile.h"
-#include "testAlgo/testAlgo.h"
+#include "readFile.h"
+#include "testAlgo.h"
 
 using namespace std;
 // functions declarations
@@ -62,11 +61,10 @@ void Toc(){
 
 
 int main() {
-
-
     for(int i=0; i<29; i++){
         // 当前文件
-        string curFile = files[i];
+        string curFile = "../source-files/";
+        curFile += files[i];
 
         // 文件数据
         int src_int[500][2]={};
@@ -108,7 +106,6 @@ int main() {
         // 结束
         Toc();
     }
-
 
 
     return 0;
