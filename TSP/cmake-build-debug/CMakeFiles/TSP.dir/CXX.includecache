@@ -31,6 +31,8 @@ windows.h
 -
 string
 -
+cmath
+-
 readFile.h
 C:/Users/66919/TSP-Course-Design/TSP/readFile.h
 testAlgo.h

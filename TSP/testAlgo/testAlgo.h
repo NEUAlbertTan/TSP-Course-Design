@@ -18,9 +18,13 @@ template <typename T>
 int* algoName( int &dimension, T srcFile[500][2] ){
     // 结果用一个N+1长的数组
     int* answer = new int[dimension+1];
-    for(int i=0; i<dimension+1; i++){
-        answer[i] = i;
+    /*
+     *  do something
+     */
+    for(int i=0; i<dimension; i++){
+        answer[i] = i+1;
     }
+    answer[dimension] = 1;
     return answer;
 }
 #endif //TSP_TESTALGO_H
