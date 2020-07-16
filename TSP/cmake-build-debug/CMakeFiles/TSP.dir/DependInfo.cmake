@@ -5,16 +5,19 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/66919/TSP-Course-Design/TSP/main.cpp" "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/CMakeFiles/TSP.dir/main.cpp.obj"
-  "C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.cpp" "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/CMakeFiles/TSP.dir/readFile/readFile.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../readFile"
+  "../testAlgo"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
+  "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

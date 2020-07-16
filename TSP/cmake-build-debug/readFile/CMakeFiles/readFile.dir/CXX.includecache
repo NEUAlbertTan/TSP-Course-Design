@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.cpp
+readFile.h
+C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.h
+
+C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.h
+iostream
+-
+fstream
+-
+string
+-
+

@@ -1,0 +1,2 @@
+D:\mingw64\bin\ar.exe qc libreadFile.a  CMakeFiles/readFile.dir/readFile.cpp.obj
+D:\mingw64\bin\ranlib.exe libreadFile.a

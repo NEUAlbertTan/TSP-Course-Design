@@ -1,3 +1,9 @@
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/CMakeFiles/TSP.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/readFile.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/edit_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/rebuild_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/testAlgo.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/edit_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/rebuild_cache.dir

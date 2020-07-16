@@ -3,4 +3,12 @@ project(TSP)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TSP main.cpp header.h readFile/readFile.cpp readFile/readFile.h)
+add_subdirectory(readFile)
+include_directories(readFile)
+add_subdirectory(testAlgo)
+include_directories(testAlgo)
+
+add_executable(TSP main.cpp )
+
+target_link_libraries(TSP testAlgo)
+target_link_libraries(TSP readFile)

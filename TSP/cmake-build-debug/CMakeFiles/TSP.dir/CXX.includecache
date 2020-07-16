@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/66919/TSP-Course-Design/TSP/header.h
+C:/Users/66919/TSP-Course-Design/TSP/main.cpp
 iostream
 -
 windows.h
@@ -15,12 +15,10 @@ fstream
 -
 string
 -
-
-C:/Users/66919/TSP-Course-Design/TSP/main.cpp
-header.h
-C:/Users/66919/TSP-Course-Design/TSP/header.h
 readFile/readFile.h
 C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.h
+testAlgo/testAlgo.h
+C:/Users/66919/TSP-Course-Design/TSP/testAlgo/testAlgo.h
 
 C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.h
 iostream
@@ -29,4 +27,6 @@ fstream
 -
 string
 -
+
+C:/Users/66919/TSP-Course-Design/TSP/testAlgo/testAlgo.h
 

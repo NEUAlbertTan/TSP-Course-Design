@@ -1,0 +1,2 @@
+D:\mingw64\bin\ar.exe qc libtestAlgo.a  CMakeFiles/testAlgo.dir/testAlgo.cpp.obj
+D:\mingw64\bin\ranlib.exe libtestAlgo.a
