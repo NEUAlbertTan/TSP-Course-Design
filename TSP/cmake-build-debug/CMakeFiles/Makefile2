@@ -53,32 +53,74 @@ CMAKE_BINARY_DIR = C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/TSP.dir/all
+all: readFile/all
+all: testAlgo/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: readFile/preinstall
+preinstall: testAlgo/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/TSP.dir/clean
+clean: readFile/clean
+clean: testAlgo/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory readFile
+
+# Recursive "all" directory target.
+readFile/all: readFile/CMakeFiles/readFile.dir/all
+
+.PHONY : readFile/all
+
+# Recursive "preinstall" directory target.
+readFile/preinstall:
+
+.PHONY : readFile/preinstall
+
+# Recursive "clean" directory target.
+readFile/clean: readFile/CMakeFiles/readFile.dir/clean
+
+.PHONY : readFile/clean
+
+#=============================================================================
+# Directory level rules for directory testAlgo
+
+# Recursive "all" directory target.
+testAlgo/all: testAlgo/CMakeFiles/testAlgo.dir/all
+
+.PHONY : testAlgo/all
+
+# Recursive "preinstall" directory target.
+testAlgo/preinstall:
+
+.PHONY : testAlgo/preinstall
+
+# Recursive "clean" directory target.
+testAlgo/clean: testAlgo/CMakeFiles/testAlgo.dir/clean
+
+.PHONY : testAlgo/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/TSP.dir
 
 # All Build rule for target.
-CMakeFiles/TSP.dir/all:
+CMakeFiles/TSP.dir/all: readFile/CMakeFiles/readFile.dir/all
+CMakeFiles/TSP.dir/all: testAlgo/CMakeFiles/testAlgo.dir/all
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/depend
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target TSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target TSP"
 .PHONY : CMakeFiles/TSP.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TSP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 6
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/TSP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TSP.dir/rule
@@ -92,6 +134,60 @@ TSP: CMakeFiles/TSP.dir/rule
 CMakeFiles/TSP.dir/clean:
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/clean
 .PHONY : CMakeFiles/TSP.dir/clean
+
+#=============================================================================
+# Target rules for target readFile/CMakeFiles/readFile.dir
+
+# All Build rule for target.
+readFile/CMakeFiles/readFile.dir/all:
+	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/depend
+	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target readFile"
+.PHONY : readFile/CMakeFiles/readFile.dir/all
+
+# Build rule for subdir invocation for target.
+readFile/CMakeFiles/readFile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 readFile/CMakeFiles/readFile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
+.PHONY : readFile/CMakeFiles/readFile.dir/rule
+
+# Convenience name for target.
+readFile: readFile/CMakeFiles/readFile.dir/rule
+
+.PHONY : readFile
+
+# clean rule for target.
+readFile/CMakeFiles/readFile.dir/clean:
+	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/clean
+.PHONY : readFile/CMakeFiles/readFile.dir/clean
+
+#=============================================================================
+# Target rules for target testAlgo/CMakeFiles/testAlgo.dir
+
+# All Build rule for target.
+testAlgo/CMakeFiles/testAlgo.dir/all:
+	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/depend
+	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target testAlgo"
+.PHONY : testAlgo/CMakeFiles/testAlgo.dir/all
+
+# Build rule for subdir invocation for target.
+testAlgo/CMakeFiles/testAlgo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 testAlgo/CMakeFiles/testAlgo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
+.PHONY : testAlgo/CMakeFiles/testAlgo.dir/rule
+
+# Convenience name for target.
+testAlgo: testAlgo/CMakeFiles/testAlgo.dir/rule
+
+.PHONY : testAlgo
+
+# clean rule for target.
+testAlgo/CMakeFiles/testAlgo.dir/clean:
+	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/clean
+.PHONY : testAlgo/CMakeFiles/testAlgo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

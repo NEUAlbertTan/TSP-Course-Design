@@ -253,6 +253,18 @@ TSP_BINARY_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug
 //Value Computed by CMake
 TSP_SOURCE_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP
 
+//Value Computed by CMake
+readFile_BINARY_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile
+
+//Value Computed by CMake
+readFile_SOURCE_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP/readFile
+
+//Value Computed by CMake
+testAlgo_BINARY_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo
+
+//Value Computed by CMake
+testAlgo_SOURCE_DIR:STATIC=C:/Users/66919/TSP-Course-Design/TSP/testAlgo
+
 
 ########################
 # INTERNAL cache entries
@@ -366,7 +378,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

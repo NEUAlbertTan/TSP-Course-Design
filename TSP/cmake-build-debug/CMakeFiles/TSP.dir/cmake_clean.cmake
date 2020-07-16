@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TSP.dir/main.cpp.obj"
-  "CMakeFiles/TSP.dir/readFile/readFile.cpp.obj"
   "TSP.exe"
   "TSP.exe.manifest"
   "TSP.pdb"

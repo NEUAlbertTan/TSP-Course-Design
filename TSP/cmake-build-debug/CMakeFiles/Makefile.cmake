@@ -12,6 +12,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeSystem.cmake"
+  "../readFile/CMakeLists.txt"
+  "../testAlgo/CMakeLists.txt"
   "D:/clion/CLion 2020.1.2/bin/cmake/win/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "D:/clion/CLion 2020.1.2/bin/cmake/win/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "D:/clion/CLion 2020.1.2/bin/cmake/win/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -49,9 +51,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "readFile/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "testAlgo/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TSP.dir/DependInfo.cmake"
+  "readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
+  "testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
   )

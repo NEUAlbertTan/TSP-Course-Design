@@ -5,7 +5,7 @@
 		<Option title="TSP"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug"/>
@@ -34,6 +34,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -55,6 +57,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -79,21 +83,116 @@
 					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="readFile">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/libreadFile.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 readFile"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="readFile/fast">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/libreadFile.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 readFile/fast"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testAlgo">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/libtestAlgo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 testAlgo"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testAlgo/fast">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/libtestAlgo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 testAlgo/fast"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/header.h">
-			<Option target="TSP"/>
-		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/main.cpp">
 			<Option target="TSP"/>
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.cpp">
-			<Option target="TSP"/>
+			<Option target="readFile"/>
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/readFile/readFile.h">
-			<Option target="TSP"/>
+			<Option target="readFile"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/testAlgo/testAlgo.cpp">
+			<Option target="testAlgo"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/testAlgo/testAlgo.h">
+			<Option target="testAlgo"/>
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/readFile/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\readFile\"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/testAlgo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\testAlgo\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -122,6 +122,32 @@ TSP/fast:
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/build
 .PHONY : TSP/fast
 
+#=============================================================================
+# Target rules for targets named readFile
+
+# Build rule for target.
+readFile: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 readFile
+.PHONY : readFile
+
+# fast build rule for target.
+readFile/fast:
+	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/build
+.PHONY : readFile/fast
+
+#=============================================================================
+# Target rules for targets named testAlgo
+
+# Build rule for target.
+testAlgo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 testAlgo
+.PHONY : testAlgo
+
+# fast build rule for target.
+testAlgo/fast:
+	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
+.PHONY : testAlgo/fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -149,33 +175,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-readFile/readFile.obj: readFile/readFile.cpp.obj
-
-.PHONY : readFile/readFile.obj
-
-# target to build an object file
-readFile/readFile.cpp.obj:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/readFile/readFile.cpp.obj
-.PHONY : readFile/readFile.cpp.obj
-
-readFile/readFile.i: readFile/readFile.cpp.i
-
-.PHONY : readFile/readFile.i
-
-# target to preprocess a source file
-readFile/readFile.cpp.i:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/readFile/readFile.cpp.i
-.PHONY : readFile/readFile.cpp.i
-
-readFile/readFile.s: readFile/readFile.cpp.s
-
-.PHONY : readFile/readFile.s
-
-# target to generate assembly for a file
-readFile/readFile.cpp.s:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/readFile/readFile.cpp.s
-.PHONY : readFile/readFile.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +184,11 @@ help:
 	@echo ... edit_cache
 	@echo ... TSP
 	@echo ... rebuild_cache
+	@echo ... readFile
+	@echo ... testAlgo
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... readFile/readFile.obj
-	@echo ... readFile/readFile.i
-	@echo ... readFile/readFile.s
 .PHONY : help
 
 
