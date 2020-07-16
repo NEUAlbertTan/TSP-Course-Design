@@ -8,6 +8,7 @@
 #include <cmath>
 #include "readFile.h"
 #include "testAlgo.h"
+#include "ant.h"
 
 #define RUN_TIMES 10
 #define SAMPLE_AMOUNT 29
@@ -45,7 +46,7 @@ LARGE_INTEGER g_cpuFreq, g_startTime, g_endTime;
 double g_run_time=0.0;      // the total running time
 
 
-// 文件
+// 文件集合
 string files[30]={
         "berlin52.tsp",
         "bier127.tsp",

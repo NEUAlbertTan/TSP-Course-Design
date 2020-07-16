@@ -79,14 +79,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles\progress.marks
-	$(MAKE) -f CMakeFiles\Makefile2 all
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\Ant\CMakeFiles\progress.marks
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 Ant/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles\Makefile2 clean
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 Ant/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,97 +96,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles\Makefile2 preinstall
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 Ant/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles\Makefile2 preinstall
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 Ant/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named TSP
+# Convenience name for target.
+Ant/CMakeFiles/ant.dir/rule:
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f CMakeFiles\Makefile2 Ant/CMakeFiles/ant.dir/rule
+.PHONY : Ant/CMakeFiles/ant.dir/rule
 
-# Build rule for target.
-TSP: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 TSP
-.PHONY : TSP
+# Convenience name for target.
+ant: Ant/CMakeFiles/ant.dir/rule
 
-# fast build rule for target.
-TSP/fast:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/build
-.PHONY : TSP/fast
-
-#=============================================================================
-# Target rules for targets named readFile
-
-# Build rule for target.
-readFile: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 readFile
-.PHONY : readFile
-
-# fast build rule for target.
-readFile/fast:
-	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/build
-.PHONY : readFile/fast
-
-#=============================================================================
-# Target rules for targets named testAlgo
-
-# Build rule for target.
-testAlgo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 testAlgo
-.PHONY : testAlgo
-
-# fast build rule for target.
-testAlgo/fast:
-	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
-.PHONY : testAlgo/fast
-
-#=============================================================================
-# Target rules for targets named ant
-
-# Build rule for target.
-ant: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 ant
 .PHONY : ant
 
 # fast build rule for target.
 ant/fast:
-	$(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/build
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/build
 .PHONY : ant/fast
 
-main.obj: main.cpp.obj
+ant.obj: ant.cpp.obj
 
-.PHONY : main.obj
+.PHONY : ant.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+ant.cpp.obj:
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/ant.cpp.obj
+.PHONY : ant.cpp.obj
 
-main.i: main.cpp.i
+ant.i: ant.cpp.i
 
-.PHONY : main.i
+.PHONY : ant.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/main.cpp.i
-.PHONY : main.cpp.i
+ant.cpp.i:
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/ant.cpp.i
+.PHONY : ant.cpp.i
 
-main.s: main.cpp.s
+ant.s: ant.cpp.s
 
-.PHONY : main.s
+.PHONY : ant.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/main.cpp.s
-.PHONY : main.cpp.s
+ant.cpp.s:
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/ant.cpp.s
+.PHONY : ant.cpp.s
 
 # Help Target
 help:
@@ -194,15 +157,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... edit_cache
-	@echo ... TSP
-	@echo ... rebuild_cache
-	@echo ... readFile
-	@echo ... testAlgo
 	@echo ... ant
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... edit_cache
+	@echo ... rebuild_cache
+	@echo ... ant.obj
+	@echo ... ant.i
+	@echo ... ant.s
 .PHONY : help
 
 
@@ -214,6 +174,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
