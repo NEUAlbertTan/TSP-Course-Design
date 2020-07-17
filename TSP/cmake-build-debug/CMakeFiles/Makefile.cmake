@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "../Ant/CMakeLists.txt"
   "../CMakeLists.txt"
   "CMakeFiles/3.16.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeCXXCompiler.cmake"
@@ -54,7 +53,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "readFile/CMakeFiles/CMakeDirectoryInformation.cmake"
   "testAlgo/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Ant/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -62,5 +60,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TSP.dir/DependInfo.cmake"
   "readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
   "testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
-  "Ant/CMakeFiles/ant.dir/DependInfo.cmake"
   )

@@ -148,19 +148,6 @@ testAlgo/fast:
 	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
 .PHONY : testAlgo/fast
 
-#=============================================================================
-# Target rules for targets named ant
-
-# Build rule for target.
-ant: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 ant
-.PHONY : ant
-
-# fast build rule for target.
-ant/fast:
-	$(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/build
-.PHONY : ant/fast
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -199,7 +186,6 @@ help:
 	@echo ... rebuild_cache
 	@echo ... readFile
 	@echo ... testAlgo
-	@echo ... ant
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

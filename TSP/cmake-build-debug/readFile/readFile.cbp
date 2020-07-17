@@ -5,7 +5,7 @@
 		<Option title="readFile"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile"/>
@@ -74,9 +74,6 @@
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/testAlgo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\testAlgo\"/>
-		</Unit>
-		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/Ant/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\Ant\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
