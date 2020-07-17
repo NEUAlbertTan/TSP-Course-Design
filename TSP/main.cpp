@@ -8,10 +8,10 @@
 #include <cmath>
 #include "readFile.h"
 #include "testAlgo.h"
-#include "ant.h"
 
 #define RUN_TIMES 10
 #define SAMPLE_AMOUNT 29
+#define OUTPUT_PATH "../output.txt"
 
 using namespace std;
 // functions declarations
@@ -90,17 +90,27 @@ void Tic(){
 void Toc(){
     QueryPerformanceCounter(&g_endTime);
     g_run_time = (((g_endTime.QuadPart - g_startTime.QuadPart) * 1000.0f) / g_cpuFreq.QuadPart);
-    cout << g_run_time << " ms" << endl;
+}
+
+int getBestLength(  ){
+
 }
 
 
 int main() {
+    ofstream outputFile(OUTPUT_PATH);
+    if( !outputFile.is_open() ){
+        cout<<"outputFile error!"<<endl;
+        return 0;
+    }
+    outputFile << "Algo1: "<<endl;
     double time[SAMPLE_AMOUNT][RUN_TIMES] = {};
     double length[SAMPLE_AMOUNT][RUN_TIMES] = {};
     for(int i=0; i<SAMPLE_AMOUNT; i++) {
         // 当前文件
         string curFile = "../source-files/";
         curFile += files[i];
+        outputFile << "File Name: "<< files[i] << endl;
 
         // 文件数据
         int src_int[500][2] = {};
@@ -129,9 +139,9 @@ int main() {
             // 算法开始
             Tic();
             if (typeName == "double") {
-                ans = algoName(dimension, src_double);
+                ans = algoName_double(dimension, src_double);
             } else if (typeName == "int") {
-                ans = algoName(dimension, src_int);
+                ans = algoName_int(dimension, src_int);
             }
             // 结束
             Toc();
@@ -141,8 +151,13 @@ int main() {
             } else if (typeName == "int") {
                 length[i][j] = getLength( ans,dimension,src_int );
             }
+            outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<" Length: "<<length[i][j]<<endl;
         }
+
+
     }
 
+
+    outputFile.close();
     return 0;
 }

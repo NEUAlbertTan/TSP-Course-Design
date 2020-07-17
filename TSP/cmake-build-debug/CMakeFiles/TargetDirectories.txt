@@ -7,6 +7,3 @@ C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/rebui
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/testAlgo.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/edit_cache.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/rebuild_cache.dir
-C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/ant.dir
-C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/edit_cache.dir
-C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/rebuild_cache.dir

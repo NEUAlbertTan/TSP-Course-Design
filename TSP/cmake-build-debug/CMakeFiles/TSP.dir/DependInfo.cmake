@@ -12,14 +12,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../readFile"
   "../testAlgo"
-  "../Ant"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
   "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
-  "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/ant.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

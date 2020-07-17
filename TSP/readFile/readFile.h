@@ -9,7 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <stdlib.h>
+#include <cstdlib>
 template <typename T>
 void ReadFile(const std::string &filePath, int &dimension, T src[500][2]){
     int n=0;

@@ -13,7 +13,7 @@ fstream
 -
 string
 -
-stdlib.h
+cstdlib
 -
 
 ../testAlgo/testAlgo.h
