@@ -34,12 +34,24 @@ const double ROU = 0.5;//信息素残留度
 
 struct Ant
 {
-    int Path[MAX_DIMENSION];
+    int* Path;
     double length;//当前已走的长度；
-    int vis[MAX_DIMENSION];//已走的城市
+    int* vis;//已走的城市
     int cur_city;//现在所在的城市
     int num_move;//已经走的城市数
-    void Init(int dimension)
+    double** dis;//各个城市的距离
+    //各个城市的位置
+    double** info;//信息素矩阵
+    int dimension;
+//    Ant(int* p,int *v, double** d, double** in, int dimen){
+//        Path = p;
+//        vis = v;
+//        dis = d;
+//        info = in;
+//        dimension = dimen;
+//    }
+
+    void Init()
     {
         memset(vis,0,sizeof(vis));
         length=0.0;
@@ -48,7 +60,7 @@ struct Ant
         vis[cur_city]=1;
         num_move=1;
     }
-    int choose(int dimension)
+    int choose()
     {
         int select_city=-1;//选择的城市
         double sum=0.0;
@@ -126,6 +138,21 @@ struct TSP
 {
     Ant ants[num_ant];
     Ant ant_best;
+
+    double** dis;//各个城市的距离
+    //各个城市的位置
+    double** info;//信息素矩阵
+    int dimension;
+    int** srcFile;
+
+    TSP(double** d,double** in,
+        int dims,int** src){
+        dis = d;
+        info = in;
+        dimension = dims;
+        srcFile = src;
+    }
+
     void Init()
     {
         ant_best.length=double(INF);//初始化最优的蚂蚁，设为最大
@@ -149,7 +176,7 @@ struct TSP
             }
         }
     }
-    void Update(int dimension, double **info)
+    void Update()
     {
         double tmpinfo[MAX_DIMENSION][MAX_DIMENSION];//临时矩阵储存新增的信息素
 
@@ -157,17 +184,17 @@ struct TSP
         int n=0;
         int m=0;
         //蚁量算法更新信息素
-        for(int i=0;i<num_ant;i++)
+        for(auto & ant : ants)
         {
             for(int j=1;j<dimension;j++)
             {
-                n=ants[i].Path[j-1];
-                m=ants[i].Path[j];
-                tmpinfo[n][m]+=Q/ants[i].length;
+                n=ant.Path[j-1];
+                m=ant.Path[j];
+                tmpinfo[n][m]+=Q/ant.length;
                 tmpinfo[m][n]=tmpinfo[n][m];
             }
-            n=ants[i].Path[0];
-            tmpinfo[n][m]+=Q/ants[i].length;
+            n=ant.Path[0];
+            tmpinfo[n][m]+=Q/ant.length;
             tmpinfo[m][n]=tmpinfo[n][m];
         }
         //更新环境的信息素
@@ -186,16 +213,16 @@ struct TSP
         for(int i=0;i<MAX_GEN;i++)
         {
             printf("current generation is %d\n",i);
-            for(int j=0;j<num_ant;j++)
+            for(auto & ant : ants)
             {
-                ants[j].find_();
+                ant.find_();
                 //printf("****");
             }
-            for(int j=0;j<num_ant;j++)
+            for(auto & ant : ants)
             {
-                if(ant_best.length>ants[j].length)
+                if(ant_best.length>ant.length)
                 {
-                    ant_best=ants[j];//更新每一代的最优解
+                    ant_best=ant;//更新每一代的最优解
                 }
             }
             Update();
@@ -207,23 +234,26 @@ struct TSP
 
 
 template <typename T>
-int* algoAnt( int &dimension, T srcFile[500][2] ){
+int* algoAnt(int dimension, T srcFile[MAX_DIMENSION][2]){
     // 结果用一个N+1长的数组
+    int *answer = new int[MAX_DIMENSION];
+
+
     int remain = 100;//信息素残留参数
     //double beat_path;//
 
-    double dis[dimension+50][dimension+50];//各个城市的距离
-    //各个城市的位置
-    int vis[dimension][dimension];//禁忌表
-    double info[dimension][dimension];//信息素矩阵
+    double dis[MAX_DIMENSION+50][MAX_DIMENSION+50];//各个城市的距离
 
+    //各个城市的位置
+    int vis[MAX_DIMENSION][MAX_DIMENSION];//禁忌表
+    double info[MAX_DIMENSION][MAX_DIMENSION];//信息素矩阵
 
     //double active[dimension][dimension];//启发因子矩阵
     unsigned seed=(unsigned)time(0);
 
 
     srand(seed);//随机函数初始化
-    TSP tsp;
+    TSP tsp(dis,info,dimension,srcFile);
 //    printf("Please enter 30 cities position\n");
 //    for(int i=0;i<30;i++)
 //    {
@@ -235,12 +265,11 @@ int* algoAnt( int &dimension, T srcFile[500][2] ){
     printf("The minimum path is \n");
     for(int i=0;i<dimension+1;i++)
     {
+        answer[i] = tsp.ant_best.Path[i];
         printf("%d ",tsp.ant_best.Path[i]);//打印出路径
     }
-    return tsp.ant_best.Path;
+    return answer;
 
 }
-
-
 
 #endif //TSP_ANT_H

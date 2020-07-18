@@ -8,6 +8,7 @@
 #include <cmath>
 #include "readFile.h"
 #include "testAlgo.h"
+#include "ant.h"
 
 #define RUN_TIMES 10
 #define SAMPLE_AMOUNT 29
@@ -92,8 +93,28 @@ void Toc(){
     g_run_time = (((g_endTime.QuadPart - g_startTime.QuadPart) * 1000.0f) / g_cpuFreq.QuadPart);
 }
 
-int getBestLength(  ){
+int getBestLength( const double length[SAMPLE_AMOUNT][RUN_TIMES], const int currentSample ){
+    int index = 0;
+    double minLength = length[0][0];
+    for(int i=1; i<RUN_TIMES; i++ ){
+        if( length[currentSample][i] < minLength ){
+            index = i;
+            minLength = length[currentSample][i];
+        }
+    }
+    return index;
+}
 
+int getBestTime( const double time[SAMPLE_AMOUNT][RUN_TIMES], const int currentSample ){
+    int index = 0;
+    double minLength = time[0][0];
+    for(int i=1; i<RUN_TIMES; i++ ){
+        if( time[currentSample][i] < minLength ){
+            index = i;
+            minLength = time[currentSample][i];
+        }
+    }
+    return index;
 }
 
 
@@ -103,6 +124,7 @@ int main() {
         cout<<"outputFile error!"<<endl;
         return 0;
     }
+
     outputFile << "Algo1: "<<endl;
     double time[SAMPLE_AMOUNT][RUN_TIMES] = {};
     double length[SAMPLE_AMOUNT][RUN_TIMES] = {};
@@ -151,10 +173,12 @@ int main() {
             } else if (typeName == "int") {
                 length[i][j] = getLength( ans,dimension,src_int );
             }
-            outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<" Length: "<<length[i][j]<<endl;
+            outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<"ms Length: "<<length[i][j]<<endl;
         }
-
-
+        int bestLen = getBestLength(length,i);
+        int bestTime = getBestTime(time,i);
+        outputFile<< "The best trial of length: "<< "trial "<< bestLen <<" -- Length: "<<length[i][bestLen]<<endl;
+        outputFile<< "The best trial of time: "<< "trial "<< bestTime <<" -- Time: "<<time[i][bestTime]<<"ms"<<endl<<endl;
     }
 
 

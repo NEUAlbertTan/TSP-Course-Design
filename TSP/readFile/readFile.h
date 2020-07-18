@@ -52,8 +52,7 @@ void ReadFile(const std::string &filePath, int &dimension, T src[500][2]){
     // ( index, x, y )
     int index=0;
     T x=0,y=0;
-    // 下标从一开始
-    for( int i=1; i<=n ; i++){
+    for( int i=0; i<n ; i++){
         inFile >> index >> x >> y;
         src[i][0] = x;
         src[i][1] = y;

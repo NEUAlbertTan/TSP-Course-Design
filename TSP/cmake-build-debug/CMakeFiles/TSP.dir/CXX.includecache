@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../Ant/ant.h
+bits/stdc++.h
+-
+cstdio
+-
+algorithm
+-
+cstring
+-
+string
+-
+iostream
+-
+
 ../readFile/readFile.h
 iostream
 -
@@ -37,4 +51,6 @@ readFile.h
 C:/Users/66919/TSP-Course-Design/TSP/readFile.h
 testAlgo.h
 C:/Users/66919/TSP-Course-Design/TSP/testAlgo.h
+ant.h
+C:/Users/66919/TSP-Course-Design/TSP/ant.h
 

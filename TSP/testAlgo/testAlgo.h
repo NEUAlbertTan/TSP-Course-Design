@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <windows.h>
 
 
 /*
@@ -44,13 +45,14 @@ int* algoName_int(int dimension, int srcFile[500][2]){
 int* algoName_double( int dimension, double srcFile[500][2]){
     // 结果用一个500长的数组
     int* answer = new int[500];
+    Sleep(1000);
     /*
      *  do something
      */
     for(int i=0; i<dimension; i++){
-        answer[i] = i+1;
+        answer[i] = i;
     }
-    answer[dimension] = 1;
+    answer[dimension] = 0;
     return answer;
 }
 
