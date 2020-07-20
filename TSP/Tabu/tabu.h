@@ -10,7 +10,7 @@
 using namespace std;
 #define MAX_DIMENSION 500
 
-int * Tabu_Search_Double(double Source[500][2],int City_Num);
+int *Tabu_Search_Double(int City_Num, double Source[500][2]);
 random_device rd2;
 mt19937 rn(rd2());
 namespace Jia{
@@ -33,7 +33,7 @@ namespace Jia{
         return length;
     }
 }
-int * Tabu_Search_Double(double Source[500][2],int City_Num){
+int *Tabu_Search_Double(int City_Num, double Source[500][2]) {
     int temp,flag;
     int rand1,rand2;
     //uniform_int_distribution<>r2(0,City_Num-1);

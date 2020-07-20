@@ -165,7 +165,7 @@ int main() {
             // 算法开始
             Tic();
             if (typeName == "double") {
-                ans = Tabu_Search_Double( src_double, dimension);
+                ans = algoName_double( dimension,src_double );
             } else if (typeName == "int") {
                 ans = algoName_int(dimension, src_int);
             }
@@ -179,6 +179,11 @@ int main() {
                 length[i][j] = Albert::getLength( ans,dimension,src_int );
             }
             outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<"ms Length: "<<length[i][j]<<endl;
+            outputFile<<"Path: ";
+            for(int k=0; k<dimension+1; k++){
+                outputFile<<ans[k]<<' ';
+            }
+            outputFile<<endl;
         } // for j in RUN_TIMES
 
         int bestLen = getBestLength(length,i);
