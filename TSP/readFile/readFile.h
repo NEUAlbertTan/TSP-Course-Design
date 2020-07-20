@@ -40,6 +40,10 @@ void ReadFile(const std::string &filePath, int &dimension, T src[500][2]){
     }
     // 将dimension赋值
     dimension = n;
+    if( dimension > 500 ){
+        std::cerr<<"File dimension overflow!"<<std::endl;
+        exit(0);
+    }
     // get the edge_weight_type
     //    char edge_weight_type[20] = {};
     //    inFile >> str >> edge_weight_type;

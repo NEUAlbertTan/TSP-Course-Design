@@ -56,6 +56,7 @@ all: CMakeFiles/TSP.dir/all
 all: readFile/all
 all: testAlgo/all
 all: Ant/all
+all: Tabu/all
 
 .PHONY : all
 
@@ -63,6 +64,7 @@ all: Ant/all
 preinstall: readFile/preinstall
 preinstall: testAlgo/preinstall
 preinstall: Ant/preinstall
+preinstall: Tabu/preinstall
 
 .PHONY : preinstall
 
@@ -71,6 +73,7 @@ clean: CMakeFiles/TSP.dir/clean
 clean: readFile/clean
 clean: testAlgo/clean
 clean: Ant/clean
+clean: Tabu/clean
 
 .PHONY : clean
 
@@ -91,6 +94,24 @@ Ant/preinstall:
 Ant/clean: Ant/CMakeFiles/ant.dir/clean
 
 .PHONY : Ant/clean
+
+#=============================================================================
+# Directory level rules for directory Tabu
+
+# Recursive "all" directory target.
+Tabu/all: Tabu/CMakeFiles/tabu.dir/all
+
+.PHONY : Tabu/all
+
+# Recursive "preinstall" directory target.
+Tabu/preinstall:
+
+.PHONY : Tabu/preinstall
+
+# Recursive "clean" directory target.
+Tabu/clean: Tabu/CMakeFiles/tabu.dir/clean
+
+.PHONY : Tabu/clean
 
 #=============================================================================
 # Directory level rules for directory readFile
@@ -135,6 +156,7 @@ testAlgo/clean: testAlgo/CMakeFiles/testAlgo.dir/clean
 CMakeFiles/TSP.dir/all: readFile/CMakeFiles/readFile.dir/all
 CMakeFiles/TSP.dir/all: testAlgo/CMakeFiles/testAlgo.dir/all
 CMakeFiles/TSP.dir/all: Ant/CMakeFiles/ant.dir/all
+CMakeFiles/TSP.dir/all: Tabu/CMakeFiles/tabu.dir/all
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/depend
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target TSP"
@@ -142,7 +164,7 @@ CMakeFiles/TSP.dir/all: Ant/CMakeFiles/ant.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TSP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 10
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/TSP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TSP.dir/rule
@@ -191,7 +213,7 @@ readFile/CMakeFiles/readFile.dir/clean:
 testAlgo/CMakeFiles/testAlgo.dir/all:
 	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/depend
 	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target testAlgo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target testAlgo"
 .PHONY : testAlgo/CMakeFiles/testAlgo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -237,6 +259,33 @@ ant: Ant/CMakeFiles/ant.dir/rule
 Ant/CMakeFiles/ant.dir/clean:
 	$(MAKE) -f Ant\CMakeFiles\ant.dir\build.make Ant/CMakeFiles/ant.dir/clean
 .PHONY : Ant/CMakeFiles/ant.dir/clean
+
+#=============================================================================
+# Target rules for target Tabu/CMakeFiles/tabu.dir
+
+# All Build rule for target.
+Tabu/CMakeFiles/tabu.dir/all:
+	$(MAKE) -f Tabu\CMakeFiles\tabu.dir\build.make Tabu/CMakeFiles/tabu.dir/depend
+	$(MAKE) -f Tabu\CMakeFiles\tabu.dir\build.make Tabu/CMakeFiles/tabu.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target tabu"
+.PHONY : Tabu/CMakeFiles/tabu.dir/all
+
+# Build rule for subdir invocation for target.
+Tabu/CMakeFiles/tabu.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 Tabu/CMakeFiles/tabu.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
+.PHONY : Tabu/CMakeFiles/tabu.dir/rule
+
+# Convenience name for target.
+tabu: Tabu/CMakeFiles/tabu.dir/rule
+
+.PHONY : tabu
+
+# clean rule for target.
+Tabu/CMakeFiles/tabu.dir/clean:
+	$(MAKE) -f Tabu\CMakeFiles\tabu.dir\build.make Tabu/CMakeFiles/tabu.dir/clean
+.PHONY : Tabu/CMakeFiles/tabu.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

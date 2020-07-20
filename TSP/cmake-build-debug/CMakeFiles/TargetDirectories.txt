@@ -10,3 +10,6 @@ C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo/CMakeFiles/rebui
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/ant.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/edit_cache.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/rebuild_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/CMakeFiles/tabu.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/CMakeFiles/edit_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/CMakeFiles/rebuild_cache.dir

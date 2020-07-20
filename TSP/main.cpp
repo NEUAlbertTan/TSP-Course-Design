@@ -9,8 +9,9 @@
 #include "readFile.h"
 #include "testAlgo.h"
 #include "ant.h"
+#include "tabu.h"
 
-#define RUN_TIMES 10
+#define RUN_TIMES 3
 #define SAMPLE_AMOUNT 29
 #define OUTPUT_PATH "../output.txt"
 
@@ -19,27 +20,30 @@ using namespace std;
 void Tic();
 void Toc();
 
-/*
- * 计算两点欧氏距离
- */
-template <typename T>
-double getDistance( T a[2], T b[2] ){
-    return sqrt( (a[0] - b[0])*(a[0] - b[0]) + (a[1] - b[1])*(a[1] - b[1]) );
-}
-/*
- * 计算路径长度
- * dimension：维度；
- * ans：dimension+1维的数组，全排列
- * src：原数据
- */
-template <typename T>
-double getLength( const int *ans, int dimension, T src[500][2] ){
-    double length = 0;
-    for(int i=0; i<dimension; i++){
-        length += getDistance( src[ans[i]],src[ans[i+1]] );
+namespace Albert{
+    /*
+     * 计算两点欧氏距离
+     */
+    template <typename T>
+    double getDistance( T a[2], T b[2] ){
+        return sqrt( (a[0] - b[0])*(a[0] - b[0]) + (a[1] - b[1])*(a[1] - b[1]) );
     }
-    return length;
+    /*
+     * 计算路径长度
+     * dimension：维度；
+     * ans：dimension+1维的数组，全排列
+     * src：原数据
+     */
+    template <typename T>
+    double getLength(const int *ans, int dimension, T src[MAX_DIMENSION][2]){
+        double length = 0;
+        for(int i=0; i<dimension; i++){
+            length += getDistance( src[ans[i]],src[ans[i+1]] );
+        }
+        return length;
+    }
 }
+
 
 
 // global variant for timing
@@ -161,24 +165,26 @@ int main() {
             // 算法开始
             Tic();
             if (typeName == "double") {
-                ans = algoName_double(dimension, src_double);
+                ans = Tabu_Search_Double( src_double, dimension);
             } else if (typeName == "int") {
                 ans = algoName_int(dimension, src_int);
             }
             // 结束
             Toc();
+
             time[i][j] = g_run_time;
             if (typeName == "double") {
-               length[i][j] = getLength( ans,dimension,src_double );
+               length[i][j] = Albert::getLength( ans,dimension,src_double );
             } else if (typeName == "int") {
-                length[i][j] = getLength( ans,dimension,src_int );
+                length[i][j] = Albert::getLength( ans,dimension,src_int );
             }
             outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<"ms Length: "<<length[i][j]<<endl;
-        }
+        } // for j in RUN_TIMES
+
         int bestLen = getBestLength(length,i);
         int bestTime = getBestTime(time,i);
-        outputFile<< "The best trial of length: "<< "trial "<< bestLen <<" -- Length: "<<length[i][bestLen]<<endl;
-        outputFile<< "The best trial of time: "<< "trial "<< bestTime <<" -- Time: "<<time[i][bestTime]<<"ms"<<endl<<endl;
+        outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
+        outputFile<< "The best trial of time: "<< "trial "<< bestTime+1 <<" -- Time: "<<time[i][bestTime]<<"ms"<<endl<<endl;
     }
 
 
