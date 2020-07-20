@@ -20,6 +20,14 @@ string
 iostream
 -
 
+../Tabu/tabu.h
+iostream
+-
+math.h
+-
+random
+-
+
 ../readFile/readFile.h
 iostream
 -
@@ -37,6 +45,8 @@ fstream
 -
 string
 -
+windows.h
+-
 
 C:/Users/66919/TSP-Course-Design/TSP/main.cpp
 iostream
@@ -53,4 +63,6 @@ testAlgo.h
 C:/Users/66919/TSP-Course-Design/TSP/testAlgo.h
 ant.h
 C:/Users/66919/TSP-Course-Design/TSP/ant.h
+tabu.h
+C:/Users/66919/TSP-Course-Design/TSP/tabu.h
 

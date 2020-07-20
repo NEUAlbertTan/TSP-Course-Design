@@ -3,6 +3,7 @@
 
 CMakeFiles/TSP.dir/main.cpp.obj
  ../Ant/ant.h
+ ../Tabu/tabu.h
  ../readFile/readFile.h
  ../testAlgo/testAlgo.h
  C:/Users/66919/TSP-Course-Design/TSP/main.cpp

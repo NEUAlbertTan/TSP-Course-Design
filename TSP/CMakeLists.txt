@@ -9,9 +9,12 @@ add_subdirectory(testAlgo)
 include_directories(testAlgo)
 add_subdirectory(Ant)
 include_directories(Ant)
+add_subdirectory(Tabu)
+include_directories(Tabu)
 
 add_executable(TSP main.cpp )
 
 target_link_libraries(TSP testAlgo)
 target_link_libraries(TSP readFile)
 target_link_libraries(TSP ant)
+target_link_libraries(TSP tabu)

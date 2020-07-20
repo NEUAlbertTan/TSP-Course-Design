@@ -45,7 +45,7 @@ int* algoName_int(int dimension, int srcFile[500][2]){
 int* algoName_double( int dimension, double srcFile[500][2]){
     // 结果用一个500长的数组
     int* answer = new int[500];
-    Sleep(1000);
+    Sleep(100);
     /*
      *  do something
      */

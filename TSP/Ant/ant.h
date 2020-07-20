@@ -238,7 +238,6 @@ int* algoAnt(int dimension, T srcFile[MAX_DIMENSION][2]){
     // 结果用一个N+1长的数组
     int *answer = new int[MAX_DIMENSION];
 
-
     int remain = 100;//信息素残留参数
     //double beat_path;//
 
@@ -250,7 +249,6 @@ int* algoAnt(int dimension, T srcFile[MAX_DIMENSION][2]){
 
     //double active[dimension][dimension];//启发因子矩阵
     unsigned seed=(unsigned)time(0);
-
 
     srand(seed);//随机函数初始化
     TSP tsp(dis,info,dimension,srcFile);

@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../Ant/CMakeLists.txt"
   "../CMakeLists.txt"
+  "../Tabu/CMakeLists.txt"
   "CMakeFiles/3.16.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeRCCompiler.cmake"
@@ -55,6 +56,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "readFile/CMakeFiles/CMakeDirectoryInformation.cmake"
   "testAlgo/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Ant/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Tabu/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -63,4 +65,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
   "testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
   "Ant/CMakeFiles/ant.dir/DependInfo.cmake"
+  "Tabu/CMakeFiles/tabu.dir/DependInfo.cmake"
   )
