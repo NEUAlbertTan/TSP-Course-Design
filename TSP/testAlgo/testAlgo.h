@@ -36,9 +36,9 @@ int* algoName_int(int dimension, int srcFile[500][2]){
      *  do something
      */
     for(int i=0; i<dimension; i++){
-        answer[i] = i+1;
+        answer[i] = i;
     }
-    answer[dimension] = 1;
+    answer[dimension] = 0;
     return answer;
 }
 
