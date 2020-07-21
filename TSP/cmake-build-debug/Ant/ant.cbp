@@ -5,7 +5,7 @@
 		<Option title="ant"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;CMake Files\insertion\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant"/>
@@ -84,6 +84,9 @@
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/Tabu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tabu\"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/insertion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\insertion\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

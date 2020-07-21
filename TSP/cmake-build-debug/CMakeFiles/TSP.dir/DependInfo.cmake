@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../testAlgo"
   "../Ant"
   "../Tabu"
+  "../insertion"
   )
 
 # Targets to which this target links.
@@ -22,6 +23,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/readFile/CMakeFiles/readFile.dir/DependInfo.cmake"
   "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Ant/CMakeFiles/ant.dir/DependInfo.cmake"
   "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/CMakeFiles/tabu.dir/DependInfo.cmake"
+  "C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/CMakeFiles/insertion.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
