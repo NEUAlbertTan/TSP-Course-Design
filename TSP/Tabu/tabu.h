@@ -45,17 +45,17 @@ int *Tabu_Search_Double(int City_Num, double Source[500][2]) {
     int N_gen;/////当前邻居搜索次数
     const int TabuLenth=20;/////禁忌长度
     //int OriginList[City_Num+1];/////初始解序列
-    int OriginList[MAX_DIMENSION];/////初始解序列
+    int* OriginList = new int[MAX_DIMENSION];/////初始解序列
     int* BestList = new int[City_Num + 1];/////最优解序列
     double BestAnswer;/////最优解长度
     //int TempBestList[City_Num+1];/////当前最好解序列
-    int TempBestList[MAX_DIMENSION];/////当前最好解序列
+    int* TempBestList = new int[MAX_DIMENSION];/////当前最好解序列
     double TempBestAnswer;/////当前最好解长度
     //int TempList[City_Num+1];/////当前解序列
-    int TempList[MAX_DIMENSION];/////当前解序列
+    int* TempList = new int[MAX_DIMENSION];/////当前解序列
     double TempAnswer;/////当前解长度
     //int TempNList[City_Num+1];/////当前邻居序列
-    int TempNList[MAX_DIMENSION];/////当前邻居序列
+    int* TempNList = new int[MAX_DIMENSION];/////当前邻居序列
     double TempNAnswer;/////当前邻居解长度
     double MaxA;/////初始解长度寄存
     //int Cities[City_Num+1][2];/////城市集

@@ -5,7 +5,7 @@
 		<Option title="TSP"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;CMake Files\insertion\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug"/>
@@ -38,6 +38,7 @@
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Ant"/>
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Tabu"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/insertion"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -63,6 +64,7 @@
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Ant"/>
 					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Tabu"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/insertion"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -267,6 +269,56 @@
 					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="insertion">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/libinsertion.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Ant"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Tabu"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 insertion"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="insertion/fast">
+				<Option output="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/libinsertion.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/readFile"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/testAlgo"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Ant"/>
+					<Add directory="C:/Users/66919/TSP-Course-Design/TSP/Tabu"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 insertion/fast"/>
+					<CompileFile command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/Ant/ant.cpp">
 			<Option target="ant"/>
@@ -279,6 +331,12 @@
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/Tabu/tabu.h">
 			<Option target="tabu"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/insertion/insertion.cpp">
+			<Option target="insertion"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/insertion/insertion.h">
+			<Option target="insertion"/>
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/main.cpp">
 			<Option target="TSP"/>
@@ -309,6 +367,9 @@
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/Tabu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Tabu\"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/insertion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\insertion\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

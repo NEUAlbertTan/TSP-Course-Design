@@ -5,15 +5,18 @@
 #include <iostream>
 #include <windows.h>
 #include <string>
+#include <vector>
 #include <cmath>
 #include "readFile.h"
 #include "testAlgo.h"
 #include "ant.h"
 #include "tabu.h"
+#include "insertion.h"
 
 #define RUN_TIMES 3
 #define SAMPLE_AMOUNT 29
 #define OUTPUT_PATH "../output.txt"
+#define VISUAL_OUTPUT_PATH "../visualOutput.txt"
 
 using namespace std;
 // functions declarations
@@ -34,8 +37,8 @@ namespace Albert{
      * ans：dimension+1维的数组，全排列
      * src：原数据
      */
-    template <typename T>
-    double getLength(const int *ans, int dimension, T src[MAX_DIMENSION][2]){
+    template <typename T, typename D>
+    double getLength(D ans, int dimension, T src[MAX_DIMENSION][2]){
         double length = 0;
         for(int i=0; i<dimension; i++){
             length += getDistance( src[ans[i]],src[ans[i+1]] );
@@ -49,7 +52,6 @@ namespace Albert{
 // global variant for timing
 LARGE_INTEGER g_cpuFreq, g_startTime, g_endTime;
 double g_run_time=0.0;      // the total running time
-
 
 // 文件集合
 string files[30]={
@@ -124,7 +126,8 @@ int getBestTime( const double time[SAMPLE_AMOUNT][RUN_TIMES], const int currentS
 
 int main() {
     ofstream outputFile(OUTPUT_PATH);
-    if( !outputFile.is_open() ){
+    ofstream visualOutputFile(VISUAL_OUTPUT_PATH);
+    if( !outputFile.is_open() || !visualOutputFile.is_open() ){
         cout<<"outputFile error!"<<endl;
         return 0;
     }
@@ -160,39 +163,81 @@ int main() {
 
         // 算法结果
         int *ans = nullptr;
+        vector<int> ans_vec;
+
+        vector<int*> answers_int;
+        vector<vector<int>> answers_vector;
 
         for (int j = 0; j < RUN_TIMES; j++) {
             // 算法开始
             Tic();
+//            if (typeName == "double") {
+//                ans = algoName_double( dimension,src_double );
+//            } else if (typeName == "int") {
+//                ans = algoName_int(dimension, src_int);
+//            }
             if (typeName == "double") {
-                ans = algoName_double( dimension,src_double );
+                ans_vec = zycrf( dimension,src_double );
             } else if (typeName == "int") {
-                ans = algoName_int(dimension, src_int);
+                ans_vec = zycrf(dimension, src_int);
             }
             // 结束
             Toc();
 
+            // 记录answer
+            answers_vector.push_back(ans_vec);
+
+            // 记录时间
             time[i][j] = g_run_time;
+
+            //记录长度
             if (typeName == "double") {
-               length[i][j] = Albert::getLength( ans,dimension,src_double );
+               length[i][j] = Albert::getLength( ans_vec,dimension,src_double );
             } else if (typeName == "int") {
-                length[i][j] = Albert::getLength( ans,dimension,src_int );
+                length[i][j] = Albert::getLength( ans_vec,dimension,src_int );
             }
+
+            // 输出到output文件 -- BEGIN
             outputFile<< "Trial "<<j+1<<": Time: "<<time[i][j]<<"ms Length: "<<length[i][j]<<endl;
             outputFile<<"Path: ";
+//            for(int k=0; k<dimension+1; k++){
+//                outputFile<<ans[k]<<' ';
+//            }
             for(int k=0; k<dimension+1; k++){
-                outputFile<<ans[k]<<' ';
+                outputFile<<ans_vec[k]<<' ';
             }
             outputFile<<endl;
+            // 输出到output文件 -- END
+
         } // for j in RUN_TIMES
 
+        // 计算每一个sample的最优表现 并且记录到output文件
         int bestLen = getBestLength(length,i);
         int bestTime = getBestTime(time,i);
         outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
         outputFile<< "The best trial of time: "<< "trial "<< bestTime+1 <<" -- Time: "<<time[i][bestTime]<<"ms"<<endl<<endl;
-    }
+
+        // 可视化输出
+        visualOutputFile << dimension << endl;
+        for(int n=0; n<dimension; n++) {
+            if (typeName == "double") {
+                visualOutputFile << src_double[n][0] << ' ' << src_double[n][1] << ' ';
+            } else if (typeName == "int") {
+                visualOutputFile << src_int[n][0] << ' ' << src_int[n][1] << ' ';
+            }
+        }
+        visualOutputFile<<endl;
+        for(int n=0; n<dimension+1; n++){
+            visualOutputFile << answers_vector[bestLen][n]<<' ';
+        }
+        visualOutputFile<<endl;
+        // 清空解集
+        answers_vector.clear();
+    }// for i in SAMPLES
 
 
+    
+    visualOutputFile.close();
     outputFile.close();
     return 0;
 }

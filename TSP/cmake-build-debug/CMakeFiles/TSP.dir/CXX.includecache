@@ -28,6 +28,24 @@ math.h
 random
 -
 
+../insertion/insertion.h
+unordered_set
+-
+unordered_map
+-
+type_traits
+-
+algorithm
+-
+cmath
+-
+iostream
+-
+random
+-
+numeric
+-
+
 ../readFile/readFile.h
 iostream
 -
@@ -55,6 +73,8 @@ windows.h
 -
 string
 -
+vector
+-
 cmath
 -
 readFile.h
@@ -65,4 +85,6 @@ ant.h
 C:/Users/66919/TSP-Course-Design/TSP/ant.h
 tabu.h
 C:/Users/66919/TSP-Course-Design/TSP/tabu.h
+insertion.h
+C:/Users/66919/TSP-Course-Design/TSP/insertion.h
 

@@ -83,6 +83,7 @@ TSP.exe: testAlgo/libtestAlgo.a
 TSP.exe: readFile/libreadFile.a
 TSP.exe: Ant/libant.a
 TSP.exe: Tabu/libtabu.a
+TSP.exe: insertion/libinsertion.a
 TSP.exe: CMakeFiles/TSP.dir/linklibs.rsp
 TSP.exe: CMakeFiles/TSP.dir/objects1.rsp
 TSP.exe: CMakeFiles/TSP.dir/link.txt

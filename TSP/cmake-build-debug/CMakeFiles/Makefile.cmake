@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeSystem.cmake"
+  "../insertion/CMakeLists.txt"
   "../readFile/CMakeLists.txt"
   "../testAlgo/CMakeLists.txt"
   "D:/clion/CLion 2020.1.2/bin/cmake/win/share/cmake-3.16/Modules/CMakeCInformation.cmake"
@@ -57,6 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "testAlgo/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Ant/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Tabu/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "insertion/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -66,4 +68,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "testAlgo/CMakeFiles/testAlgo.dir/DependInfo.cmake"
   "Ant/CMakeFiles/ant.dir/DependInfo.cmake"
   "Tabu/CMakeFiles/tabu.dir/DependInfo.cmake"
+  "insertion/CMakeFiles/insertion.dir/DependInfo.cmake"
   )
