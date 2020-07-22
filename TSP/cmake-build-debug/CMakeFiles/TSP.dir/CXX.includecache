@@ -33,6 +33,8 @@ random
 -
 numeric
 -
+list
+-
 
 ../readFile/readFile.h
 iostream
