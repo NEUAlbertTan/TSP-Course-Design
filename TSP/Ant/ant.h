@@ -10,12 +10,13 @@
 using namespace std;
 namespace sama{
     double INF = 10e9;
-    constexpr int num_ant=52;//蚂蚁的数量
+    int num_ant=52;//蚂蚁的数量
     constexpr int dimension=250;//max城市数量
     constexpr int MAX_GEN=100;//最大迭代次数
     constexpr int ALPHA = 1;//信息素的权重
     constexpr int BETA = 4;//启发式因子重要程度权重
     constexpr int remain = 100;//信息素残留参数
+    int var_dimension = 250;
 }
 
 //double srcFile[dimension][2] = {{565,575},{25,185},{345,750},{945,685},{845,655},{880,660},{25,230},{525,1000},{580,1175},{650,1130},{1605,620},{1220,580},{1465,200},{1530,5},{845,680},{725,370},{145,665},{415,635},{510,875},{560,365},{300,465},{520,585},{480,415},{835,625},{975,580},{1215,245},{1320,315},{1250,400},{660,180},{410,250},{420,555},{575,665},{1150,1160},{700,580},{685,595},{685,610},{770,610},{795,645},{720,635},{760,650},{475,960},{95,260},{875,920},{700,500},{555,815},{830,485},{1170,65},{830,610},{605,625},{595,360},{1340,725},{1740,245}};
@@ -62,7 +63,7 @@ struct Ant
     {
         memset(vis,0,sizeof(vis));
         length=0.0;
-        cur_city=random(0,sama::dimension);
+        cur_city=random(0,sama::var_dimension);
         Path[0]=cur_city;
         vis[cur_city]=1;
         num_move=1;
@@ -72,7 +73,7 @@ struct Ant
         int select_city=-1;//选择的城市
         double sum=0.0;
         double possible_city[sama::dimension];//各个城市被选中的概率
-        for(int i=0;i<sama::dimension;i++)
+        for(int i=0;i<sama::var_dimension;i++)
         {
             if(!vis[i])
             {
@@ -90,7 +91,7 @@ struct Ant
         if(sum>0.0)
         {
             possible_du=random(0.0,sum);
-            for(int i=0;i<sama::dimension;i++)
+            for(int i=0;i<sama::var_dimension;i++)
             {
                 if(!vis[i])
                 {
@@ -105,7 +106,7 @@ struct Ant
         }
         if(select_city==-1)
         {
-            for(int i=0;i<sama::dimension;i++)
+            for(int i=0;i<sama::var_dimension;i++)
             {
                 if(!vis[i])
                 {
@@ -130,14 +131,14 @@ struct Ant
     void find_()
     {
         Init();
-        while(num_move<sama::dimension)
+        while(num_move<sama::var_dimension)
         {
             move_ant();
             ////printf("%d ",num_move);
             ////printf("?????");
         }
         ////printf("???");
-        length+=dis[Path[sama::dimension-1]][Path[0]];//更新长度
+        length+=dis[Path[sama::var_dimension-1]][Path[0]];//更新长度
         ////printf("??");
     }
 };
@@ -145,7 +146,7 @@ double (*Ant::dis)[sama::dimension+50]= nullptr;
 double (*Ant::info)[sama::dimension]= nullptr;
 struct TSP
 {
-    Ant ants[sama::num_ant];
+    Ant ants[sama::dimension];
     Ant ant_best;
     void Update()
     {
@@ -156,7 +157,7 @@ struct TSP
         //蚁量算法更新信息素
         for(int i=0;i<sama::num_ant;i++)
         {
-            for(int j=1;j<sama::dimension;j++)
+            for(int j=1;j<sama::var_dimension;j++)
             {
                 n=ants[i].Path[j-1];
                 m=ants[i].Path[j];
@@ -168,9 +169,9 @@ struct TSP
             tmpinfo[m][n]=tmpinfo[n][m];
         }
         //更新环境的信息素
-        for(int i=0;i<sama::dimension;i++)
+        for(int i=0;i<sama::var_dimension;i++)
         {
-            for(int j=0;j<sama::dimension;j++)
+            for(int j=0;j<sama::var_dimension;j++)
             {
                 //新环境的信息素=残留的+新留下的
                 Ant::info[i][j]=Ant::info[i][j]*ROU+tmpinfo[i][j];//感觉ROU有待商榷
@@ -204,9 +205,9 @@ struct TSP
         Ant::info= new double[sama::dimension][sama::dimension];
         ant_best.length=double(sama::INF);//初始化最优的蚂蚁，设为最大
         //printf("Begin to count\n");
-        for(int i=0;i<sama::dimension;i++)
+        for(int i=0;i<sama::var_dimension;i++)
         {
-            for(int j=0;j<sama::dimension;j++)
+            for(int j=0;j<sama::var_dimension;j++)
             {
                 double tmp1=srcFile[j][0]-srcFile[i][0];
                 double tmp2=srcFile[j][1]-srcFile[i][1];
@@ -215,9 +216,9 @@ struct TSP
             }
         }
         ////printf("Init Information\n");
-        for(int i=0;i<sama::dimension;i++)
+        for(int i=0;i<sama::var_dimension;i++)
         {
-            for(int j=0;j<sama::dimension;j++)
+            for(int j=0;j<sama::var_dimension;j++)
             {
                 Ant::info[i][j]=1.0;//初始化信息素
             }
@@ -226,6 +227,8 @@ struct TSP
 };
 
 int *ant(int dimension, double cities[][2]){
+    sama::var_dimension = dimension;
+    sama::num_ant = dimension;
     TSP tsp(cities);
     tsp.find_();
     tsp.ant_best.Path[dimension]=tsp.ant_best.Path[0];

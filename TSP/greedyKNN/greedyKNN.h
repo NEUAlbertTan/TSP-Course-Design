@@ -7,6 +7,7 @@
 #include <windows.h>
 #include <ctime>
 #include <cmath>
+#include <limits>
 
 using namespace std;
 namespace DST{
@@ -19,7 +20,6 @@ namespace DST{
 * ���룺dimension �����ݵ�ά����srcFile�����ݼ���ֱ�������þ���
 * ���������answer����
 */
-
 int* greedy_knn_int(int dimension, int srcFile[500][2]){
     int* answer = new int[500];
     int pastnum,citynum,lastcitynum,listnum;
@@ -45,7 +45,7 @@ int* greedy_knn_int(int dimension, int srcFile[500][2]){
     answer[0] = firstnum;
     pastnum = 1;//�ѷ��ʵĳ�������
     do{
-        citynum = 0;Dtemp = 10000;//Dtemp��ʼ��������
+        citynum = 0;Dtemp = numeric_limits<int>::max();//Dtemp��ʼ��������
         do{
             listnum = 0;flag = 0;
             do{
