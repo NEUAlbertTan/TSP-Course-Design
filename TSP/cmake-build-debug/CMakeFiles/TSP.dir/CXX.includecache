@@ -6,26 +6,14 @@
 
 #IncludeRegexTransform: 
 
-../Ant/ant.h
-bits/stdc++.h
--
-cstdio
--
-algorithm
--
-cstring
--
-string
--
-iostream
--
-
 ../Tabu/tabu.h
 iostream
 -
 math.h
 -
 random
+-
+ctime
 -
 
 ../insertion/insertion.h
@@ -56,16 +44,6 @@ string
 cstdlib
 -
 
-../testAlgo/testAlgo.h
-iostream
--
-fstream
--
-string
--
-windows.h
--
-
 C:/Users/66919/TSP-Course-Design/TSP/main.cpp
 iostream
 -
@@ -79,10 +57,6 @@ cmath
 -
 readFile.h
 C:/Users/66919/TSP-Course-Design/TSP/readFile.h
-testAlgo.h
-C:/Users/66919/TSP-Course-Design/TSP/testAlgo.h
-ant.h
-C:/Users/66919/TSP-Course-Design/TSP/ant.h
 tabu.h
 C:/Users/66919/TSP-Course-Design/TSP/tabu.h
 insertion.h
