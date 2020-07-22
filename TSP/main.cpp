@@ -13,7 +13,7 @@
 #include "tabu.h"
 #include "insertion.h"
 
-#define RUN_TIMES 3
+#define RUN_TIMES 10
 #define SAMPLE_AMOUNT 29
 #define OUTPUT_PATH "../output.txt"
 #define VISUAL_OUTPUT_PATH "../visualOutput.txt"
@@ -22,10 +22,8 @@
 #define VISUAL_ZYCRF "../visual_zycrf.txt"
 #define VISUAL_TABU "../visual_Tabu.txt"
 #define MAX_DIMENSION 500
+
 using namespace std;
-// functions declarations
-void Tic();
-void Toc();
 
 namespace Albert{
     /*
@@ -51,16 +49,8 @@ namespace Albert{
     }
 }
 
-
-
-// global variant for timing
-LARGE_INTEGER g_cpuFreq, g_startTime, g_endTime;
-double g_run_time=0.0;      // the total running time
-double sample_time[SAMPLE_AMOUNT][RUN_TIMES] = {};
-double length[SAMPLE_AMOUNT][RUN_TIMES] = {};
-
 // 文件集合
-string files[30]={
+string files[29]={
         "berlin52.tsp",
         "bier127.tsp",
         "ch130.tsp",
@@ -77,27 +67,40 @@ string files[30]={
         "kroD100.tsp",
         "kroE100.tsp",
         "lin105.tsp",
+        "pr76.tsp",
         "pr107.tsp",
         "pr124.tsp",
         "pr136.tsp",
         "pr144.tsp",
         "pr152.tsp",
-        "pr76.tsp",
-        "rat195.tsp",
         "rat99.tsp",
+        "rat195.tsp",
         "rd100.tsp",
         "st70.tsp",
         "ts225.tsp",
         "tsp225.tsp",
         "u159.tsp"
 };
+// 最优解
+int optimal[SAMPLE_AMOUNT] = {
+        7542,118282,6110,6528,15780,629,21282,26524,29368,22141,26130,29437,20749,21294,22068,
+        14379,108059,44303,59030,96772,58537,73682,1211,2323,7910,675,126643,3916,42080
+};
 
+
+// 文件流
 ofstream outputFile;
 ofstream briefOutputFile;
 ofstream visual_zjcrf;
 ofstream visual_zycrf;
 ofstream visual_Tabu;
 
+
+// global variant for timing
+LARGE_INTEGER g_cpuFreq, g_startTime, g_endTime;
+double g_run_time=0.0;      // the total running time
+double sample_time[SAMPLE_AMOUNT][RUN_TIMES] = {};
+double length[SAMPLE_AMOUNT][RUN_TIMES] = {};
 
 // timer begin
 void Tic(){
@@ -110,6 +113,7 @@ void Toc(){
     QueryPerformanceCounter(&g_endTime);
     g_run_time = (((g_endTime.QuadPart - g_startTime.QuadPart) * 1000.0f) / g_cpuFreq.QuadPart);
 }
+
 
 int getBestLength( const double length[SAMPLE_AMOUNT][RUN_TIMES], const int currentSample ){
     int index = 0;
@@ -144,7 +148,6 @@ void run_zycrf(){
         string curFile = "../source-files/";
         curFile += files[i];
         outputFile << "File Name: "<< files[i] << endl;
-        briefOutputFile <<"File Name: "<< files[i] << endl;
         // 文件数据
         int src_int[500][2] = {};
         double src_double[500][2] = {};
@@ -211,7 +214,7 @@ void run_zycrf(){
         outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
         // 简介文件
-        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << endl;
+        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" <<' ';
         // 可视化输出
         visual_zycrf << files[i] << endl;
         visual_zycrf << dimension << endl;
@@ -234,7 +237,6 @@ void run_zycrf(){
     visual_zycrf<<endl;
 }
 
-
 // 最近插入法 Emon100
 void run_zjcrf(){
     outputFile << "Algo2: Nearest insertion"<<endl;
@@ -244,7 +246,6 @@ void run_zjcrf(){
         string curFile = "../source-files/";
         curFile += files[i];
         outputFile << "File Name: "<< files[i] << endl;
-        briefOutputFile <<"File Name: "<< files[i] << endl;
         // 文件数据
         int src_int[500][2] = {};
         double src_double[500][2] = {};
@@ -311,7 +312,7 @@ void run_zjcrf(){
         outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
         // 简介文件
-        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << endl;
+        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
         visual_zjcrf << files[i] << endl;
         visual_zjcrf << dimension << endl;
@@ -342,7 +343,6 @@ void run_Tabu(){
         string curFile = "../source-files/";
         curFile += files[i];
         outputFile << "File Name: "<< files[i] << endl;
-        briefOutputFile<< "File Name: "<< files[i] << endl;
 
         // 文件数据
         int src_int[500][2] = {};
@@ -407,7 +407,7 @@ void run_Tabu(){
         int bestTime = getBestTime(sample_time, i);
         outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
-        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << endl;
+        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
         visual_Tabu << files[i] << endl;
         visual_Tabu << dimension << endl;
@@ -435,6 +435,10 @@ int main() {
     visual_Tabu.open(VISUAL_TABU);
     visual_zjcrf.open(VISUAL_ZJCRF);
     visual_zycrf.open(VISUAL_ZYCRF);
+    for(auto & file : files){
+        briefOutputFile<< file << ' '<<" X ";
+    }
+    briefOutputFile<<endl;
     if( !outputFile.is_open() || !briefOutputFile.is_open() || !visual_zycrf.is_open() || !visual_zjcrf.is_open() || !visual_Tabu.is_open() ){
         cout<<"outputFile error!"<<endl;
         return 0;
@@ -447,8 +451,13 @@ int main() {
     run_zjcrf();
 
     //Jia: Tabu Search
-    run_Tabu();
+    //run_Tabu();
 
+    briefOutputFile<<"optimal"<<endl;
+    for(int i : optimal){
+        briefOutputFile<< i << ' '<<" X ";
+    }
+    briefOutputFile<<endl;
 
     visual_zjcrf.close();
     visual_zycrf.close();
