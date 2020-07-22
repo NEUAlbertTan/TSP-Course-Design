@@ -16,3 +16,6 @@ C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/Tabu/CMakeFiles/rebuild_c
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/CMakeFiles/insertion.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/CMakeFiles/edit_cache.dir
 C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/insertion/CMakeFiles/rebuild_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/greedyKNN/CMakeFiles/greedyKNN.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/greedyKNN/CMakeFiles/edit_cache.dir
+C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/greedyKNN/CMakeFiles/rebuild_cache.dir

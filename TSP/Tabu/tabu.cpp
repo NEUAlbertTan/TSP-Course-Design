@@ -8,12 +8,12 @@ int *Tabu_Search_double(int City_Num, double Source[500][2]) {
     int temp,flag;
     int rand1,rand2;
     uniform_int_distribution<>r2(0,City_Num-1);
-    int max_gen=1000;/////最大迭代次数
+    int max_gen=City_Num*20;/////最大迭代次数
     int best_gen;/////最佳迭代次数
     int gen=0;/////当前迭代次数
-    int Ner_search=200;/////邻域搜索次数
+    int Ner_search=2*City_Num;/////邻域搜索次数
     int N_gen;/////当前邻居搜索次数
-    int TabuLenth=5;/////禁忌长度
+    int TabuLength=int(City_Num/2);/////禁忌长度
     int* OriginList=new int [City_Num+1];/////初始解序列
     int*BestList=new int [City_Num+1];/////最优解序列
     double BestAnswer;/////最优解长度
@@ -25,7 +25,7 @@ int *Tabu_Search_double(int City_Num, double Source[500][2]) {
     double TempNAnswer;/////当前邻居解长度
     double MaxA;/////初始解长度寄存
     auto * Cities=new double [City_Num+1][2];/////城市集
-    auto * TabuList=new int [TabuLenth][500];/////禁忌表
+    auto * TabuList=new int [TabuLength][500];/////禁忌表
     random_device rd;
     mt19937 rn(time(nullptr));
     /////生成城市集/////
@@ -83,7 +83,7 @@ int *Tabu_Search_double(int City_Num, double Source[500][2]) {
             TempNList[rand2]=temp;
             TempNList[City_Num]=TempNList[0];
             /////判断是否在禁忌表
-            for(int i=0;i<TabuLenth;i++){
+            for(int i=0; i < TabuLength; i++){
                 flag=0;
                 for(int j=0;j<City_Num+1;j++){
                     if(TempNList[j]!=TabuList[i][j]){
@@ -118,7 +118,7 @@ int *Tabu_Search_double(int City_Num, double Source[500][2]) {
             TempList[i]=TempBestList[i];
         }
         for(int i=0;i<City_Num+1;i++){
-            TabuList[gen%TabuLenth][i]=TempBestList[i];
+            TabuList[gen % TabuLength][i]=TempBestList[i];
         }
         /////更新禁忌表
         /*for(int i=0;i<TabuLenth-1;i++){
@@ -130,6 +130,7 @@ int *Tabu_Search_double(int City_Num, double Source[500][2]) {
             TabuList[TabuLenth-1][i]=TempBestList[i];
         }/////插入新的禁忌序列 */
         gen++;
+        //cout<<"gen"<<gen<<" length:"<<TempBestAnswer<<endl;
     }
     //cout<<BestAnswer<<endl;
     delete[] OriginList;

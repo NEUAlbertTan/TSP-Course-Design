@@ -5,7 +5,7 @@
 		<Option title="testAlgo"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;CMake Files\insertion\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\readFile\;CMake Files\testAlgo\;CMake Files\Ant\;CMake Files\Tabu\;CMake Files\insertion\;CMake Files\greedyKNN\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/66919/TSP-Course-Design/TSP/cmake-build-debug/testAlgo"/>
@@ -85,6 +85,9 @@
 		</Unit>
 		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/insertion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\insertion\"/>
+		</Unit>
+		<Unit filename="C:/Users/66919/TSP-Course-Design/TSP/greedyKNN/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\greedyKNN\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

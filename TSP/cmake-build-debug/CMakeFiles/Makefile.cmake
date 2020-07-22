@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.16.5/CMakeSystem.cmake"
+  "../greedyKNN/CMakeLists.txt"
   "../insertion/CMakeLists.txt"
   "../readFile/CMakeLists.txt"
   "../testAlgo/CMakeLists.txt"
@@ -59,6 +60,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "Ant/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Tabu/CMakeFiles/CMakeDirectoryInformation.cmake"
   "insertion/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "greedyKNN/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -69,4 +71,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "Ant/CMakeFiles/ant.dir/DependInfo.cmake"
   "Tabu/CMakeFiles/tabu.dir/DependInfo.cmake"
   "insertion/CMakeFiles/insertion.dir/DependInfo.cmake"
+  "greedyKNN/CMakeFiles/greedyKNN.dir/DependInfo.cmake"
   )

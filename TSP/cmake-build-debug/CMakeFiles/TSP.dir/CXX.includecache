@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+../Ant/ant.h
+bits/stdc++.h
+-
+cmath
+-
+windows.h
+-
+
 ../Tabu/tabu.h
 iostream
 -
@@ -14,6 +22,20 @@ math.h
 random
 -
 ctime
+-
+
+../greedyKNN/greedyKNN.h
+iostream
+-
+fstream
+-
+string
+-
+windows.h
+-
+ctime
+-
+cmath
 -
 
 ../insertion/insertion.h
@@ -59,6 +81,10 @@ cmath
 -
 readFile.h
 C:/Users/66919/TSP-Course-Design/TSP/readFile.h
+greedyKNN.h
+C:/Users/66919/TSP-Course-Design/TSP/greedyKNN.h
+ant.h
+C:/Users/66919/TSP-Course-Design/TSP/ant.h
 tabu.h
 C:/Users/66919/TSP-Course-Design/TSP/tabu.h
 insertion.h
