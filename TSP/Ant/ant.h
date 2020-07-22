@@ -260,12 +260,12 @@ int* algoAnt(int dimension, T srcFile[MAX_DIMENSION][2]){
     tsp.Init();
     tsp.find_();
     tsp.ant_best.Path[dimension]=tsp.ant_best.Path[0];
-    printf("The minimum path is \n");
-    for(int i=0;i<dimension+1;i++)
-    {
-        answer[i] = tsp.ant_best.Path[i];
-        printf("%d ",tsp.ant_best.Path[i]);//打印出路径
-    }
+//    printf("The minimum path is \n");
+//    for(int i=0;i<dimension+1;i++)
+//    {
+//        answer[i] = tsp.ant_best.Path[i];
+//        printf("%d ",tsp.ant_best.Path[i]);//打印出路径
+//    }
     return answer;
 
 }
