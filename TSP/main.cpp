@@ -345,25 +345,23 @@ void run_Tabu(){
         briefOutputFile<< "File Name: "<< files[i] << endl;
 
         // 文件数据
-//        int src_int[500][2] = {};
-//        double src_double[500][2] = {};
-        double src_all[500][2]={};
+        int src_int[500][2] = {};
+        double src_double[500][2] = {};
 
         // 数据维度
         int dimension = 0;
-        ReadFile(curFile,dimension,src_all);
         // 数据类型
-//        string typeName = getType(curFile);
-//
-//        // 从文件读取目标数据
-//        if (typeName == "double") {
-//            ReadFile(curFile, dimension, src_double);
-//        } else if (typeName == "int") {
-//            ReadFile(curFile, dimension, src_int);
-//        } else {
-//            cout << "File type error! " << endl;
-//            return 0;
-//        }
+        string typeName = getType(curFile);
+
+        // 从文件读取目标数据
+        if (typeName == "double") {
+            ReadFile(curFile, dimension, src_double);
+        } else if (typeName == "int") {
+            ReadFile(curFile, dimension, src_int);
+        } else {
+            cout << "File type error! " << endl;
+            return ;
+        }
 
         // 算法结果
         int *ans = nullptr;
@@ -373,7 +371,11 @@ void run_Tabu(){
         for (int j = 0; j < RUN_TIMES; j++) {
             // 算法开始
             Tic();
-            ans = Tabu_Search( dimension,src_all );
+            if (typeName == "double") {
+                ans = Tabu_Search_double(dimension,src_double);
+            } else if (typeName == "int") {
+                ans = Tabu_Search_int(dimension,src_int);
+            }
             // 结束
             Toc();
 
@@ -383,12 +385,11 @@ void run_Tabu(){
             // 记录时间
             sample_time[i][j] = g_run_time;
             //记录长度
-//            if (typeName == "double") {
-//                length[i][j] = Albert::getLength( ans,dimension,src_double );
-//            } else if (typeName == "int") {
-//                length[i][j] = Albert::getLength( ans,dimension,src_int );
-//            }
-            length[i][j] = Albert::getLength( ans,dimension,src_all );
+            if (typeName == "double") {
+                length[i][j] = Albert::getLength( ans,dimension,src_double );
+            } else if (typeName == "int") {
+                length[i][j] = Albert::getLength( ans,dimension,src_int );
+            }
 
             // 输出到output文件 -- BEGIN
             outputFile << "Trial " <<j+1 << ": Time: " << sample_time[i][j] << "ms Length: " << length[i][j] << endl;
@@ -411,12 +412,11 @@ void run_Tabu(){
         visual_Tabu << files[i] << endl;
         visual_Tabu << dimension << endl;
         for(int n=0; n<dimension; n++) {
-//            if (typeName == "double") {
-//                visual_Tabu << src_double[n][0] << ' ' << src_double[n][1] << ' ';
-//            } else if (typeName == "int") {
-//                visual_Tabu << src_int[n][0] << ' ' << src_int[n][1] << ' ';
-//            }
-                visual_Tabu << src_all[n][0] << ' '<< src_all[n][0]<<' ';
+            if (typeName == "double") {
+                visual_Tabu << src_double[n][0] << ' ' << src_double[n][1] << ' ';
+            } else if (typeName == "int") {
+                visual_Tabu << src_int[n][0] << ' ' << src_int[n][1] << ' ';
+            }
         }
         visual_Tabu<<endl;
         for(int n=0; n<dimension+1; n++){
