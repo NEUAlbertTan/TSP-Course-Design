@@ -58,6 +58,7 @@ all: testAlgo/all
 all: Ant/all
 all: Tabu/all
 all: insertion/all
+all: greedyKNN/all
 
 .PHONY : all
 
@@ -67,6 +68,7 @@ preinstall: testAlgo/preinstall
 preinstall: Ant/preinstall
 preinstall: Tabu/preinstall
 preinstall: insertion/preinstall
+preinstall: greedyKNN/preinstall
 
 .PHONY : preinstall
 
@@ -77,6 +79,7 @@ clean: testAlgo/clean
 clean: Ant/clean
 clean: Tabu/clean
 clean: insertion/clean
+clean: greedyKNN/clean
 
 .PHONY : clean
 
@@ -115,6 +118,24 @@ Tabu/preinstall:
 Tabu/clean: Tabu/CMakeFiles/tabu.dir/clean
 
 .PHONY : Tabu/clean
+
+#=============================================================================
+# Directory level rules for directory greedyKNN
+
+# Recursive "all" directory target.
+greedyKNN/all: greedyKNN/CMakeFiles/greedyKNN.dir/all
+
+.PHONY : greedyKNN/all
+
+# Recursive "preinstall" directory target.
+greedyKNN/preinstall:
+
+.PHONY : greedyKNN/preinstall
+
+# Recursive "clean" directory target.
+greedyKNN/clean: greedyKNN/CMakeFiles/greedyKNN.dir/clean
+
+.PHONY : greedyKNN/clean
 
 #=============================================================================
 # Directory level rules for directory insertion
@@ -179,6 +200,7 @@ CMakeFiles/TSP.dir/all: testAlgo/CMakeFiles/testAlgo.dir/all
 CMakeFiles/TSP.dir/all: Ant/CMakeFiles/ant.dir/all
 CMakeFiles/TSP.dir/all: Tabu/CMakeFiles/tabu.dir/all
 CMakeFiles/TSP.dir/all: insertion/CMakeFiles/insertion.dir/all
+CMakeFiles/TSP.dir/all: greedyKNN/CMakeFiles/greedyKNN.dir/all
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/depend
 	$(MAKE) -f CMakeFiles\TSP.dir\build.make CMakeFiles/TSP.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target TSP"
@@ -186,7 +208,7 @@ CMakeFiles/TSP.dir/all: insertion/CMakeFiles/insertion.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TSP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 14
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/TSP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TSP.dir/rule
@@ -208,7 +230,7 @@ CMakeFiles/TSP.dir/clean:
 readFile/CMakeFiles/readFile.dir/all:
 	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/depend
 	$(MAKE) -f readFile\CMakeFiles\readFile.dir\build.make readFile/CMakeFiles/readFile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target readFile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target readFile"
 .PHONY : readFile/CMakeFiles/readFile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -235,7 +257,7 @@ readFile/CMakeFiles/readFile.dir/clean:
 testAlgo/CMakeFiles/testAlgo.dir/all:
 	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/depend
 	$(MAKE) -f testAlgo\CMakeFiles\testAlgo.dir\build.make testAlgo/CMakeFiles/testAlgo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target testAlgo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=13,14 "Built target testAlgo"
 .PHONY : testAlgo/CMakeFiles/testAlgo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -289,7 +311,7 @@ Ant/CMakeFiles/ant.dir/clean:
 Tabu/CMakeFiles/tabu.dir/all:
 	$(MAKE) -f Tabu\CMakeFiles\tabu.dir\build.make Tabu/CMakeFiles/tabu.dir/depend
 	$(MAKE) -f Tabu\CMakeFiles\tabu.dir\build.make Tabu/CMakeFiles/tabu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target tabu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target tabu"
 .PHONY : Tabu/CMakeFiles/tabu.dir/all
 
 # Build rule for subdir invocation for target.
@@ -316,7 +338,7 @@ Tabu/CMakeFiles/tabu.dir/clean:
 insertion/CMakeFiles/insertion.dir/all:
 	$(MAKE) -f insertion\CMakeFiles\insertion.dir\build.make insertion/CMakeFiles/insertion.dir/depend
 	$(MAKE) -f insertion\CMakeFiles\insertion.dir\build.make insertion/CMakeFiles/insertion.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target insertion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target insertion"
 .PHONY : insertion/CMakeFiles/insertion.dir/all
 
 # Build rule for subdir invocation for target.
@@ -335,6 +357,33 @@ insertion: insertion/CMakeFiles/insertion.dir/rule
 insertion/CMakeFiles/insertion.dir/clean:
 	$(MAKE) -f insertion\CMakeFiles\insertion.dir\build.make insertion/CMakeFiles/insertion.dir/clean
 .PHONY : insertion/CMakeFiles/insertion.dir/clean
+
+#=============================================================================
+# Target rules for target greedyKNN/CMakeFiles/greedyKNN.dir
+
+# All Build rule for target.
+greedyKNN/CMakeFiles/greedyKNN.dir/all:
+	$(MAKE) -f greedyKNN\CMakeFiles\greedyKNN.dir\build.make greedyKNN/CMakeFiles/greedyKNN.dir/depend
+	$(MAKE) -f greedyKNN\CMakeFiles\greedyKNN.dir\build.make greedyKNN/CMakeFiles/greedyKNN.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target greedyKNN"
+.PHONY : greedyKNN/CMakeFiles/greedyKNN.dir/all
+
+# Build rule for subdir invocation for target.
+greedyKNN/CMakeFiles/greedyKNN.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 greedyKNN/CMakeFiles/greedyKNN.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\66919\TSP-Course-Design\TSP\cmake-build-debug\CMakeFiles 0
+.PHONY : greedyKNN/CMakeFiles/greedyKNN.dir/rule
+
+# Convenience name for target.
+greedyKNN: greedyKNN/CMakeFiles/greedyKNN.dir/rule
+
+.PHONY : greedyKNN
+
+# clean rule for target.
+greedyKNN/CMakeFiles/greedyKNN.dir/clean:
+	$(MAKE) -f greedyKNN\CMakeFiles\greedyKNN.dir\build.make greedyKNN/CMakeFiles/greedyKNN.dir/clean
+.PHONY : greedyKNN/CMakeFiles/greedyKNN.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

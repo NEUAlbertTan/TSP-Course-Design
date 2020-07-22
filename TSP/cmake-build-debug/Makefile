@@ -187,6 +187,19 @@ insertion/fast:
 	$(MAKE) -f insertion\CMakeFiles\insertion.dir\build.make insertion/CMakeFiles/insertion.dir/build
 .PHONY : insertion/fast
 
+#=============================================================================
+# Target rules for targets named greedyKNN
+
+# Build rule for target.
+greedyKNN: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 greedyKNN
+.PHONY : greedyKNN
+
+# fast build rule for target.
+greedyKNN/fast:
+	$(MAKE) -f greedyKNN\CMakeFiles\greedyKNN.dir\build.make greedyKNN/CMakeFiles/greedyKNN.dir/build
+.PHONY : greedyKNN/fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -228,6 +241,7 @@ help:
 	@echo ... ant
 	@echo ... tabu
 	@echo ... insertion
+	@echo ... greedyKNN
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

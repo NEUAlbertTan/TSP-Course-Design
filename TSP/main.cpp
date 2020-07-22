@@ -8,19 +8,21 @@
 #include <vector>
 #include <cmath>
 #include "readFile.h"
+#include "greedyKNN.h"
+#include "ant.h"
 //#include "testAlgo.h"
-//#include "ant.h"
 #include "tabu.h"
 #include "insertion.h"
 
-#define RUN_TIMES 10
+#define RUN_TIMES 3
 #define SAMPLE_AMOUNT 29
 #define OUTPUT_PATH "../output.txt"
-#define VISUAL_OUTPUT_PATH "../visualOutput.txt"
 #define BRIEF_OUTPUT_PATH "../briefOutput.txt"
 #define VISUAL_ZJCRF "../visual_zjcrf.txt"
 #define VISUAL_ZYCRF "../visual_zycrf.txt"
 #define VISUAL_TABU "../visual_Tabu.txt"
+#define VISUAL_ANT "../visual_ant.txt"
+#define VISUAL_GREEDYKNN "../visual_greedyKNN.txt"
 #define MAX_DIMENSION 500
 
 using namespace std;
@@ -94,6 +96,8 @@ ofstream briefOutputFile;
 ofstream visual_zjcrf;
 ofstream visual_zycrf;
 ofstream visual_Tabu;
+ofstream visual_ant;
+ofstream visual_greedyKNN;
 
 
 // global variant for timing
@@ -429,12 +433,203 @@ void run_Tabu(){
     briefOutputFile<<endl;
 }
 
+void run_greedyKNN(){
+    outputFile << "Algo4: greedyKNN "<<endl;
+    briefOutputFile<< "Algo4: greedyKNN "<<endl;
+    for(int i=0; i<SAMPLE_AMOUNT; i++) {
+        // 当前文件
+        string curFile = "../source-files/";
+        curFile += files[i];
+        outputFile << "File Name: "<< files[i] << endl;
+
+        // 文件数据
+        int src_int[500][2] = {};
+        double src_double[500][2] = {};
+
+        // 数据维度
+        int dimension = 0;
+        // 数据类型
+        string typeName = getType(curFile);
+
+        // 从文件读取目标数据
+        if (typeName == "double") {
+            ReadFile(curFile, dimension, src_double);
+        } else if (typeName == "int") {
+            ReadFile(curFile, dimension, src_int);
+        } else {
+            cout << "File type error! " << endl;
+            return ;
+        }
+
+        // 算法结果
+        int *ans = nullptr;
+
+        vector<int*> answers_int;
+
+        for (int j = 0; j < RUN_TIMES; j++) {
+            // 算法开始
+            Tic();
+            if (typeName == "double") {
+                ans = greedy_knn_double(dimension,src_double);
+            } else if (typeName == "int") {
+                ans = greedy_knn_int(dimension,src_int);
+            }
+            // 结束
+            Toc();
+
+            // 记录answer
+            answers_int.push_back(ans);
+
+            // 记录时间
+            sample_time[i][j] = g_run_time;
+            //记录长度
+            if (typeName == "double") {
+                length[i][j] = Albert::getLength( ans,dimension,src_double );
+            } else if (typeName == "int") {
+                length[i][j] = Albert::getLength( ans,dimension,src_int );
+            }
+
+            // 输出到output文件 -- BEGIN
+            outputFile << "Trial " <<j+1 << ": Time: " << sample_time[i][j] << "ms Length: " << length[i][j] << endl;
+            outputFile<<"Path: ";
+            for(int k=0; k<dimension+1; k++){
+                outputFile<<ans[k]<<' ';
+            }
+            outputFile<<endl;
+            // 输出到output文件 -- END
+
+        } // for j in RUN_TIMES
+
+        // 计算每一个sample的最优表现 并且记录到output文件
+        int bestLen = getBestLength(length,i);
+        int bestTime = getBestTime(sample_time, i);
+        outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
+        outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
+        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
+        // 可视化输出
+        visual_greedyKNN << files[i] << endl;
+        visual_greedyKNN << dimension << endl;
+        for(int n=0; n<dimension; n++) {
+            if (typeName == "double") {
+                visual_greedyKNN << src_double[n][0] << ' ' << src_double[n][1] << ' ';
+            } else if (typeName == "int") {
+                visual_greedyKNN << src_int[n][0] << ' ' << src_int[n][1] << ' ';
+            }
+        }
+        visual_greedyKNN<<endl;
+        for(int n=0; n<dimension+1; n++){
+            visual_greedyKNN << answers_int[bestLen][n]<<' ';
+        }
+        visual_greedyKNN<<endl;
+        // 清空解集
+        answers_int.clear();
+    }// for i in SAMPLES
+    briefOutputFile<<endl;
+}
+
+void run_Ant(){
+    outputFile << "Algo5: Ant Crowd "<<endl;
+    briefOutputFile<< "Algo5: Ant Crowd "<<endl;
+    for(int i=0; i<SAMPLE_AMOUNT; i++) {
+        // 当前文件
+        string curFile = "../source-files/";
+        curFile += files[i];
+        outputFile << "File Name: "<< files[i] << endl;
+
+        // 文件数据
+        int src_int[500][2] = {};
+        double src_double[500][2] = {};
+
+        // 数据维度
+        int dimension = 0;
+        // 数据类型
+        string typeName = getType(curFile);
+
+        // 从文件读取目标数据
+        if (typeName == "double") {
+            ReadFile(curFile, dimension, src_double);
+        } else if (typeName == "int") {
+            ReadFile(curFile, dimension, src_int);
+        } else {
+            cout << "File type error! " << endl;
+            return ;
+        }
+        if( typeName == "int" ){
+            for(int k=0; k<dimension; k++){
+                src_double[i][0] = src_int[i][0];
+                src_double[i][1] = src_int[i][1];
+            }
+        }
+        // 算法结果
+        int *ans = nullptr;
+
+        vector<int*> answers_int;
+
+        for (int j = 0; j < RUN_TIMES; j++) {
+            // 算法开始
+            Tic();
+            ans = ant(dimension,src_double);
+            // 结束
+            Toc();
+
+            // 记录answer
+            answers_int.push_back(ans);
+
+            // 记录时间
+            sample_time[i][j] = g_run_time;
+            //记录长度
+            if (typeName == "double") {
+                length[i][j] = Albert::getLength( ans,dimension,src_double );
+            } else if (typeName == "int") {
+                length[i][j] = Albert::getLength( ans,dimension,src_int );
+            }
+
+            // 输出到output文件 -- BEGIN
+            outputFile << "Trial " <<j+1 << ": Time: " << sample_time[i][j] << "ms Length: " << length[i][j] << endl;
+            outputFile<<"Path: ";
+            for(int k=0; k<dimension+1; k++){
+                outputFile<<ans[k]<<' ';
+            }
+            outputFile<<endl;
+            // 输出到output文件 -- END
+
+        } // for j in RUN_TIMES
+
+        // 计算每一个sample的最优表现 并且记录到output文件
+        int bestLen = getBestLength(length,i);
+        int bestTime = getBestTime(sample_time, i);
+        outputFile<< "The best trial of length: "<< "trial "<< bestLen+1 <<" -- Length: "<<length[i][bestLen]<<endl;
+        outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
+        briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
+        // 可视化输出
+        visual_ant << files[i] << endl;
+        visual_ant << dimension << endl;
+        for(int n=0; n<dimension; n++) {
+            if (typeName == "double") {
+                visual_ant << src_double[n][0] << ' ' << src_double[n][1] << ' ';
+            } else if (typeName == "int") {
+                visual_ant << src_int[n][0] << ' ' << src_int[n][1] << ' ';
+            }
+        }
+        visual_ant<<endl;
+        for(int n=0; n<dimension+1; n++){
+            visual_ant << answers_int[bestLen][n]<<' ';
+        }
+        visual_ant<<endl;
+        // 清空解集
+        answers_int.clear();
+    }// for i in SAMPLES
+    briefOutputFile<<endl;
+}
+
 int main() {
     outputFile.open(OUTPUT_PATH);
     briefOutputFile.open(BRIEF_OUTPUT_PATH);
     visual_Tabu.open(VISUAL_TABU);
     visual_zjcrf.open(VISUAL_ZJCRF);
     visual_zycrf.open(VISUAL_ZYCRF);
+    visual_greedyKNN.open(VISUAL_GREEDYKNN);
+    visual_ant.open(VISUAL_ANT);
     for(auto & file : files){
         briefOutputFile<< file << ' '<<" X ";
     }
@@ -444,6 +639,7 @@ int main() {
         return 0;
     }
 
+
     //Emon100: Farthest insertion
     run_zycrf();
 
@@ -451,7 +647,13 @@ int main() {
     run_zjcrf();
 
     //Jia: Tabu Search
-    //run_Tabu();
+    run_Tabu();
+
+    //Wen
+    run_greedyKNN();
+
+    //Chris
+    run_Ant();
 
     briefOutputFile<<"optimal"<<endl;
     for(int i : optimal){
@@ -464,5 +666,6 @@ int main() {
     visual_Tabu.close();
     outputFile.close();
     briefOutputFile.close();
+
     return 0;
 }

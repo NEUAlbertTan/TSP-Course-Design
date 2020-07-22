@@ -13,14 +13,8 @@ C:/Users/66919/TSP-Course-Design/TSP/Ant/ant.h
 C:/Users/66919/TSP-Course-Design/TSP/Ant/ant.h
 bits/stdc++.h
 -
-cstdio
+cmath
 -
-algorithm
--
-cstring
--
-string
--
-iostream
+windows.h
 -
 
