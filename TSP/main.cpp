@@ -220,7 +220,7 @@ void run_zycrf(){
         // 简介文件
         briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" <<' ';
         // 可视化输出
-        visual_zycrf << files[i] << endl;
+        visual_zycrf << files[i] << ' '<< length[i][bestLen] << ' ' << sample_time[i][bestLen]<<endl;
         visual_zycrf << dimension << endl;
         for(int n=0; n<dimension; n++) {
             if (typeName == "double") {
@@ -318,7 +318,7 @@ void run_zjcrf(){
         // 简介文件
         briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
-        visual_zjcrf << files[i] << endl;
+        visual_zjcrf << files[i] << ' '<< length[i][bestLen] << ' ' << sample_time[i][bestLen]<<endl;
         visual_zjcrf << dimension << endl;
         for(int n=0; n<dimension; n++) {
             if (typeName == "double") {
@@ -413,7 +413,7 @@ void run_Tabu(){
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
         briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
-        visual_Tabu << files[i] << endl;
+        visual_Tabu << files[i] << ' '<< length[i][bestLen] << ' ' << sample_time[i][bestLen]<<endl;
         visual_Tabu << dimension << endl;
         for(int n=0; n<dimension; n++) {
             if (typeName == "double") {
@@ -507,7 +507,7 @@ void run_greedyKNN(){
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
         briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
-        visual_greedyKNN << files[i] << endl;
+        visual_greedyKNN << files[i] << ' '<< length[i][bestLen] << ' ' << sample_time[i][bestLen]<<endl;
         visual_greedyKNN << dimension << endl;
         for(int n=0; n<dimension; n++) {
             if (typeName == "double") {
@@ -602,7 +602,7 @@ void run_Ant(){
         outputFile << "The best trial of time: " << "trial " << bestTime+1 << " -- Time: " << sample_time[i][bestTime] << "ms" << endl << endl;
         briefOutputFile << length[i][bestLen] << ' ' << sample_time[i][bestLen]<<"ms" << ' ';
         // 可视化输出
-        visual_ant << files[i] << endl;
+        visual_ant << files[i] << ' '<< length[i][bestLen] << ' ' << sample_time[i][bestLen]<<endl;
         visual_ant << dimension << endl;
         for(int n=0; n<dimension; n++) {
             if (typeName == "double") {
@@ -655,14 +655,18 @@ int main() {
     //Chris
     run_Ant();
 
+
     briefOutputFile<<"optimal"<<endl;
     for(int i : optimal){
         briefOutputFile<< i << ' '<<" X ";
     }
     briefOutputFile<<endl;
 
+
     visual_zjcrf.close();
     visual_zycrf.close();
+    visual_greedyKNN.close();
+    visual_ant.close();
     visual_Tabu.close();
     outputFile.close();
     briefOutputFile.close();

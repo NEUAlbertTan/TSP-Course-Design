@@ -3,6 +3,12 @@ project(TSP)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# 编译模式
+#SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_BUILD_TYPE "Release")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O1 -Wall -g -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 add_subdirectory(readFile)
 include_directories(readFile)
 add_subdirectory(testAlgo)

@@ -4,4 +4,4 @@
 - Emon100 ( Insertion )
 - Chris Sama ( Ant )
 - Jia ( Tabu  )
-- Wen ( Greedy )
+- Wen ( GreedyKNN )
