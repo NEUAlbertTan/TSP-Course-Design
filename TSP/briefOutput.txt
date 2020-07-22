@@ -1,180 +1,180 @@
 Algo1: Farthest insertion
 File Name: berlin52.tsp
-7586.72 0.1882ms
+7586.72 0.1894ms
 File Name: bier127.tsp
-126005 0.9872ms
+126005 1.003ms
 File Name: ch130.tsp
-6500.43 0.9656ms
+6500.43 0.9564ms
 File Name: ch150.tsp
-7097.92 1.3074ms
+7097.92 1.3062ms
 File Name: d198.tsp
-15224.7 2.1985ms
+15224.7 2.1704ms
 File Name: eil101.tsp
-672.018 0.8598ms
+672.018 0.8603ms
 File Name: kroA100.tsp
-22727.5 0.8292ms
+22727.5 1.1625ms
 File Name: kroA150.tsp
-28540.4 1.6086ms
+28540.4 1.6064ms
 File Name: kroA200.tsp
-32030.5 2.5924ms
+32030.5 2.5996ms
 File Name: kroB100.tsp
-23131.7 0.8412ms
+23131.7 0.8377ms
 File Name: kroB150.tsp
-27874.5 1.6277ms
+27874.5 1.5986ms
 File Name: kroB200.tsp
-32478.3 2.5946ms
+32478.3 2.9409ms
 File Name: kroC100.tsp
-22807.1 0.8656ms
+22807.1 0.8465ms
 File Name: kroD100.tsp
-22595.9 0.8653ms
+22595.9 0.8599ms
 File Name: kroE100.tsp
-23578.2 0.8516ms
+23578.2 0.8319ms
 File Name: lin105.tsp
-15373.9 0.9222ms
+15373.9 0.9105ms
 File Name: pr107.tsp
-40122.9 0.962ms
+40122.9 0.9597ms
 File Name: pr124.tsp
-59985.7 1.1928ms
+59985.7 1.1842ms
 File Name: pr136.tsp
-110630 1.3819ms
+110630 1.3811ms
 File Name: pr144.tsp
-63563.7 1.5353ms
+63563.7 1.5241ms
 File Name: pr152.tsp
-75901.3 1.6824ms
+75901.3 1.6651ms
 File Name: pr76.tsp
-117025 0.5496ms
+117025 0.5488ms
 File Name: rat195.tsp
-2561.06 2.3063ms
+2561.06 2.2768ms
 File Name: rat99.tsp
-1288.07 1.0327ms
+1288.07 0.874ms
 File Name: rd100.tsp
-8360.57 0.7822ms
+8360.57 0.7951ms
 File Name: st70.tsp
-697.988 0.5213ms
+697.988 0.5192ms
 File Name: ts225.tsp
-143137 3.2524ms
+143137 3.2299ms
 File Name: tsp225.tsp
-4239.87 2.7377ms
+4239.87 2.8044ms
 File Name: u159.tsp
-46433.1 1.664ms
+46433.1 1.6724ms
 
 Algo2: Nearest insertion
 File Name: berlin52.tsp
-8479.38 0.2872ms
+8479.38 0.2965ms
 File Name: bier127.tsp
-140136 1.2838ms
+140136 1.282ms
 File Name: ch130.tsp
-6896.88 1.6783ms
+6896.88 1.1995ms
 File Name: ch150.tsp
-7446.08 1.624ms
+7446.08 1.5191ms
 File Name: d198.tsp
-17695.3 2.5407ms
+17695.3 2.4769ms
 File Name: eil101.tsp
-721.631 0.8701ms
+721.631 0.8673ms
 File Name: kroA100.tsp
-22924.1 0.8551ms
+22924.1 0.862ms
 File Name: kroA150.tsp
-30117.6 1.683ms
+30117.6 1.7046ms
 File Name: kroA200.tsp
-34389.6 2.6429ms
+34389.6 2.6714ms
 File Name: kroB100.tsp
-25066.2 0.9433ms
+25066.2 0.8786ms
 File Name: kroB150.tsp
-29102 1.6568ms
+29102 1.6446ms
 File Name: kroB200.tsp
-34843 2.6024ms
+34843 2.6583ms
 File Name: kroC100.tsp
-23435 0.8496ms
+23435 0.8469ms
 File Name: kroD100.tsp
-24478.9 0.8588ms
+24478.9 0.8548ms
 File Name: kroE100.tsp
-25269.2 0.8436ms
+25269.2 0.8447ms
 File Name: lin105.tsp
-16726.1 1.6164ms
+16726.1 0.9128ms
 File Name: pr107.tsp
-44454.5 1.5766ms
+44454.5 0.9936ms
 File Name: pr124.tsp
-65787.2 1.592ms
+65787.2 1.2708ms
 File Name: pr136.tsp
-102633 1.6074ms
+102633 1.4316ms
 File Name: pr144.tsp
-66039.7 1.6175ms
+66039.7 1.6668ms
 File Name: pr152.tsp
-73827.5 1.7019ms
+73827.5 1.745ms
 File Name: pr76.tsp
-120282 0.5638ms
+120282 0.5635ms
 File Name: rat195.tsp
-2606.88 2.3311ms
+2606.88 2.4882ms
 File Name: rat99.tsp
-1333.22 1.2662ms
+1333.22 0.9068ms
 File Name: rd100.tsp
-9166.51 1.0083ms
+9166.51 0.8028ms
 File Name: st70.tsp
-730.783 0.5078ms
+730.783 0.5046ms
 File Name: ts225.tsp
-151694 5.2589ms
+151694 3.6131ms
 File Name: tsp225.tsp
-4383.35 2.7075ms
+4383.35 2.7064ms
 File Name: u159.tsp
-49884.8 1.6695ms
+49884.8 1.7205ms
 
 Algo3: Tabu Search 
 File Name: berlin52.tsp
-9601.09 166.273ms
+9684.16 170.654ms
 File Name: bier127.tsp
-162792 382.128ms
+170088 465.234ms
 File Name: ch130.tsp
-10529.8 391.28ms
+9992.66 419.917ms
 File Name: ch150.tsp
-11271.9 448.916ms
+12162.5 448.786ms
 File Name: d198.tsp
-38997.4 582.65ms
+36490.6 576.299ms
 File Name: eil101.tsp
-818.659 299.726ms
+831.651 354.604ms
 File Name: kroA100.tsp
-32099 304.391ms
+30317.2 348.35ms
 File Name: kroA150.tsp
-51299.3 432.539ms
+51453 512.709ms
 File Name: kroA200.tsp
-65891 574.362ms
+66718.2 682.087ms
 File Name: kroB100.tsp
-38515.5 302.102ms
+36896.9 345.429ms
 File Name: kroB150.tsp
-49752.2 440.394ms
+45284.9 514.427ms
 File Name: kroB200.tsp
-70038.7 573.418ms
+66963.9 687.888ms
 File Name: kroC100.tsp
-32170.8 299.745ms
+36050.5 350.014ms
 File Name: kroD100.tsp
-34922.4 300.829ms
+29395.8 356.891ms
 File Name: kroE100.tsp
-35275.5 300.684ms
+32205.4 349.133ms
 File Name: lin105.tsp
-24196.1 315.546ms
+24587.7 366.318ms
 File Name: pr107.tsp
-132271 317.511ms
+140581 371.281ms
 File Name: pr124.tsp
-126614 366.553ms
+135138 425.039ms
 File Name: pr136.tsp
-160202 394.291ms
+181415 463.744ms
 File Name: pr144.tsp
-161037 421.024ms
+162471 500.936ms
 File Name: pr152.tsp
-216737 442.392ms
+250299 524.361ms
 File Name: pr76.tsp
-134567 230.549ms
+142591 265.542ms
 File Name: rat195.tsp
-4122.76 560.476ms
+4573.96 658.495ms
 File Name: rat99.tsp
-1733.18 290.589ms
+1972.96 340.773ms
 File Name: rd100.tsp
-11896.8 300.227ms
+13447.8 300.752ms
 File Name: st70.tsp
-1049.49 213.072ms
+862.821 246.394ms
 File Name: ts225.tsp
-343121 641.422ms
+315615 757.394ms
 File Name: tsp225.tsp
-7603.09 646.61ms
+9291.66 659.288ms
 File Name: u159.tsp
-96465.8 459.788ms
+98503.3 462.023ms
 

@@ -16,7 +16,8 @@ namespace Jia{
         return sqrt( (a[0] - b[0])*(a[0] - b[0]) + (a[1] - b[1])*(a[1] - b[1]) );
     }
 }
-int *Tabu_Search(int City_Num, double Source[500][2]);
+int *Tabu_Search_int(int City_Num, int Source[500][2]);
+int *Tabu_Search_double(int City_Num, double Source[500][2]);
 /*
  * 计算路径长度
  * dimension：维度；
