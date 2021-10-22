@@ -1,2 +1,0 @@
-D:\mingw64\bin\ar.exe qc libinsertion.a  CMakeFiles/insertion.dir/insertion.cpp.obj
-D:\mingw64\bin\ranlib.exe libinsertion.a

@@ -1,2 +1,0 @@
-D:\mingw64\bin\ar.exe qc libant.a  CMakeFiles/ant.dir/ant.cpp.obj
-D:\mingw64\bin\ranlib.exe libant.a

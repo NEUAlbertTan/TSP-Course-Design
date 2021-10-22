@@ -1,2 +1,0 @@
-D:\mingw64\bin\ar.exe qc libgreedyKNN.a  CMakeFiles/greedyKNN.dir/greedyKNN.cpp.obj
-D:\mingw64\bin\ranlib.exe libgreedyKNN.a

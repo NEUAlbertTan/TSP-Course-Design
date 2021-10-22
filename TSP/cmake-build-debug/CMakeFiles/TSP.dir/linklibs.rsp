@@ -1,1 +1,0 @@
- testAlgo/libtestAlgo.a readFile/libreadFile.a Ant/libant.a Tabu/libtabu.a insertion/libinsertion.a greedyKNN/libgreedyKNN.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

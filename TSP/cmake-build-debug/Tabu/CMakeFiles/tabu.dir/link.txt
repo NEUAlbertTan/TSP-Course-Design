@@ -1,2 +1,0 @@
-D:\mingw64\bin\ar.exe qc libtabu.a  CMakeFiles/tabu.dir/tabu.cpp.obj
-D:\mingw64\bin\ranlib.exe libtabu.a
